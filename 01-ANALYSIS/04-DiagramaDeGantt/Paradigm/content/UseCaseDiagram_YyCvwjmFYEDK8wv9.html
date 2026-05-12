@@ -1,0 +1,1673 @@
+<html>
+<head>
+	<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="report.css" type="text/css"/>
+	<title>Use Case Diagram - Use Case Diagram1</title>
+	<script type="text/javascript" src="report.js"></script>
+	<script type="text/javascript" src="link_popup.js"></script>
+	<script type="text/javascript" src="tooltip.js"></script>
+</head>
+<body style="margin-left: 10px; margin-right: 10px; margin-top: 10px; margin-bottom: 10px;" onload="initPage();initDiagram();initGridDiagram();">
+	<div style="position:absolute; z-index:2; visibility:hidden;border-top: 2px #FF0000 solid;" id="spotlight_top">
+	</div>
+	<div style="position:absolute; z-index:2; visibility:hidden;border-top: 2px #FF0000 solid;" id="spotlight_bottom">
+	</div>
+	<div style="position:absolute; z-index:2; visibility:hidden;border-left: 2px #FF0000 solid;" id="spotlight_left">
+	</div>
+	<div style="position:absolute; z-index:2; visibility:hidden;border-left: 2px #FF0000 solid;" id="spotlight_right">
+	</div>
+	<canvas width="100" style="position:absolute; z-index:2; visibility:hidden" id="spotlight_c" height="100">
+	</canvas>
+	<div style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden" id="spotLightResourcesTop">
+		<table border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td>
+<a href="#top"><img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>				</td>
+				<td>
+<a href="javascript:clearSpotLightFromOpenSpecButton();"><img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute; width:100px; height:100px; z-index:1; visibility:hidden" id="spotLightResourcesRight">
+		<table border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td>
+<a href="#top"><img style="border:none" src="../images/icons/BackToTop.gif" alt="Back to top"/></a>				</td>
+			</tr>
+			<tr>
+				<td>
+<a href="javascript:clearSpotLightFromOpenSpecButton();"><img style="border:none" src="../images/icons/OpenSpecification.gif" alt="Open specification"/></a>				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute;z-index:4;visibility:hidden" id="linkPopupMenuLayer">
+		<table border="0" width="100%" style="border-style:solid; border-width:1px; border-color:#000000; background:#FFFFFF; width:250px" id="linkPopupMenuTable">
+		</table>
+	</div>
+	<div style="position:absolute; z-index:1; visibility:hidden; " id="referenceIconLayer">
+		<table border="0" cellpadding="3" cellspacing="0" style="font-size:1;">
+			<tr>
+				<td>
+					<img src="../images/icons/Ref.gif" style="border:none" onclick="movePopupPositionToReferenceIconPosition();resetPopupForReference();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute; z-index:1; visibility:hidden; " id="subdiagramIconLayer">
+		<table border="0" cellpadding="3" cellspacing="0" style="font-size:1;">
+			<tr>
+				<td>
+					<img src="../images/icons/Subdiagram.gif" style="border:none" onclick="movePopupPositionToSubdiagramIconPosition();resetPopupForSubdiagram();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute; z-index:1; visibility:hidden; " id="transitorIconLayer">
+		<table border="0" cellpadding="3" cellspacing="0" style="font-size:1;">
+			<tr>
+				<td>
+					<img src="../images/icons/Transitor.gif" style="border:none" onclick="movePopupPositionToTransitorIconPosition();resetPopupForTransitor();switchPopupShowHideStatus();" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div style="position:absolute; z-index:1; visibility:hidden; " id="documentationIconLayer">
+		<table border="0" cellpadding="3" cellspacing="0" style="font-size:1;">
+			<tr>
+				<td>
+					<img src="../images/icons/Documentation.png" style="border:none" />				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="HeaderText">
+		Modulo de Productos	</div>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="HeaderLine1">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine2">
+			</td>
+		</tr>
+		<tr>
+			<td class="HeaderLine3">
+			</td>
+		</tr>
+	</table>
+	<div style="position:absolute; z-index:21; visibility:hidden" id="referencedBys">
+		<table border="0" width="100%" style="border-style:solid; border-width:1px; border-color:#000000; background:#FFFFFF; width:250px" id="referencedBysTable">
+		</table>
+	</div>
+	<div style="position:absolute; z-index:21; visibility:hidden" id="vplink">
+		<table border="1" cellpadding="0" cellspacing="0" bordercolor="#A9BFD3">
+			<tr>
+				<td>
+					<table border="0" cellpadding="0" width="100%" cellspacing="0">
+						<tr style="background:#DDDDDD">
+							<td style="font-size: 12px;" align="left">
+								<select onchange="vpLinkToggleName()" id="vplink-linkType">
+	<option value="Project Link">Project Link</option>
+	<option value="Page URL">Page URL</option>
+</select>
+							</td>
+							<td style="font-size: 12px;" align="right">
+								<input onclick="javascript: vpLinkToggleName()" id="vplink-checkbox" type="checkbox" />
+								<label for="vplink-checkbox">with Name</label>							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<textarea id="vplink-text" style="width: 348px; height: 60px; border-color: #7EADD9; outline: none;"></textarea>				</td>
+			</tr>
+		</table>
+	</div>
+	<p class="PageTitle">
+		<span id="PageTitleText">
+			Use Case Diagram - Use Case Diagram1		</span>
+<a onclick="javascript: showVpLink('Casos de uso GE.vpp://diagram/YyCvwjmFYEDK8wv9', 'Use Case Diagram1\nCasos de uso GE.vpp://diagram/YyCvwjmFYEDK8wv9', 'Use Case Diagram1', this); return false;" style="padding-left: 16px; font-size: 12px" href="#"><img src="../images/icons/link.png" border="0"> link</a>	</p>
+	<div style="position: relative; padding-bottom: 20px;">
+		<table border="0" cellpadding="0" width="100%" cellspacing="0" style="position: absolute; top: 0; left: 0; z-index: 20;" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),hideLinkPopup(),hideReferencedBys();">
+			<tr>
+				<td>
+<span class="TableContent">Jump to:</span>					<select id="SelectShape" class="TableContent" onChange="scrollWin('diagram', this.value);hideLinkPopup();showSpotLight('diagram', this.value)">
+<option value="">Please select a model element</option>
+<option value="shape|506.0|2.0|2934.0|1453.0|System_9NqvwjmFYEDK8wwM.html|System_9NqvwjmFYEDK8wwM.html|9NqvwjmFYEDK8wwL" id="option9NqvwjmFYEDK8wwL">SISTEMA : System</option>
+<option value="shape|113.0|52.0|178.0|319.0|Actor_Bz_fwjmFYEDK8w2S.html|Actor_Bz_fwjmFYEDK8w2S.html|Bz.fwjmFYEDK8w2R" id="optionBz.fwjmFYEDK8w2R">ALMACENISTA : Actor</option>
+<option value="shape|3613.0|52.0|127.0|257.0|Actor_rb7fwjmFYEDK8w2k.html|Actor_rb7fwjmFYEDK8w2k.html|rb7fwjmFYEDK8w2j" id="optionrb7fwjmFYEDK8w2j">MECANICO : Actor</option>
+<option value="shape|1618.0|1533.0|235.0|284.0|Actor_lPkAIjmFYEDK8w5D.html|Actor_lPkAIjmFYEDK8w5D.html|lPkAIjmFYEDK8w5C" id="optionlPkAIjmFYEDK8w5C">ADMINISTRADOR : Actor</option>
+<option value="shape|3613.0|1015.0|204.0|387.0|Actor_yuiYIjmFYEDK8yhr.html|Actor_yuiYIjmFYEDK8yhr.html|yuiYIjmFYEDK8yhq" id="optionyuiYIjmFYEDK8yhq">CLIENTE : Actor</option>
+<option value="shape|636.0|278.0|197.0|105.0|UseCase_MZhvwjmFYEDK8wwc.html|UseCase_MZhvwjmFYEDK8wwc.html|MZhvwjmFYEDK8wwb" id="optionMZhvwjmFYEDK8wwb">REGISTRO DE PRODUCTOS : Use Case</option>
+<option value="shape|1594.0|42.0|215.0|95.0|UseCase_g1dvwjmFYEDK8wxU.html|UseCase_g1dvwjmFYEDK8wxU.html|A1dvwjmFYEDK8wxT" id="optionA1dvwjmFYEDK8wxT">BUSCADOR DE PRODUCTO : Use Case</option>
+<option value="shape|641.0|411.0|197.0|86.0|UseCase_HaHvwjmFYEDK8wyX.html|UseCase_HaHvwjmFYEDK8wyX.html|HaHvwjmFYEDK8wyW" id="optionHaHvwjmFYEDK8wyW">MODIFICAR PRODUCTO : Use Case</option>
+<option value="shape|638.0|917.0|197.0|105.0|UseCase_2mQfwjmFYEDK8wzx.html|UseCase_2mQfwjmFYEDK8wzx.html|2mQfwjmFYEDK8wzw" id="option2mQfwjmFYEDK8wzw">DESACTIVAR PRODUCTOS : Use Case</option>
+<option value="shape|1464.0|912.0|246.0|94.0|UseCase_v2MfwjmFYEDK8w0z.html|UseCase_v2MfwjmFYEDK8w0z.html|P2MfwjmFYEDK8w0y" id="optionP2MfwjmFYEDK8w0y">VERIFICACION DE PAGO : Use Case</option>
+<option value="shape|1203.0|918.0|218.0|93.0|UseCase_t0OIIjmFYEDK8yUG.html|UseCase_t0OIIjmFYEDK8yUG.html|y0OIIjmFYEDK8yTP" id="optiony0OIIjmFYEDK8yTP">REGISTRO DE PERSONAL : Use Case</option>
+<option value="shape|2291.0|917.0|218.0|94.0|UseCase_H0OIIjmFYEDK8yUK.html|UseCase_H0OIIjmFYEDK8yUK.html|90OIIjmFYEDK8yUI" id="option90OIIjmFYEDK8yUI">CONSULTA DE USUARIOS : Use Case</option>
+<option value="shape|905.0|942.0|225.0|96.0|UseCase_wMOIIjmFYEDK8yUO.html|UseCase_wMOIIjmFYEDK8yUO.html|30OIIjmFYEDK8yUM" id="option30OIIjmFYEDK8yUM">GESTION DE PERFIL : Use Case</option>
+<option value="shape|638.0|1067.0|225.0|94.0|UseCase_oMOIIjmFYEDK8yUS.html|UseCase_oMOIIjmFYEDK8yUS.html|oMOIIjmFYEDK8yUQ" id="optionoMOIIjmFYEDK8yUQ">BAJA DE USUARIOS : Use Case</option>
+<option value="shape|638.0|1228.0|226.0|103.0|UseCase_mMOIIjmFYEDK8yUW.html|UseCase_mMOIIjmFYEDK8yUW.html|oMOIIjmFYEDK8yUU" id="optionoMOIIjmFYEDK8yUU">AUTENTICACION : Use Case</option>
+<option value="shape|2111.0|641.0|223.0|86.0|UseCase_oIdoIjmFYEDK8yZf.html|UseCase_oIdoIjmFYEDK8yZf.html|oIdoIjmFYEDK8yZe" id="optionoIdoIjmFYEDK8yZe">REGISTRO DE MOTO : Use Case</option>
+<option value="shape|2409.0|641.0|207.0|86.0|UseCase_pDdoIjmFYEDK8yZw.html|UseCase_pDdoIjmFYEDK8yZw.html|pDdoIjmFYEDK8yZv" id="optionpDdoIjmFYEDK8yZv">ACTUALIZACION DE DATOS : Use Case</option>
+<option value="shape|2814.0|657.0|163.0|113.0|UseCase_JS9oIjmFYEDK8yaB.html|UseCase_JS9oIjmFYEDK8yaB.html|JS9oIjmFYEDK8yaA" id="optionJS9oIjmFYEDK8yaA">VINCULACION DE CLIENTE : Use Case</option>
+<option value="shape|2265.0|772.0|197.0|86.0|UseCase_sj9oIjmFYEDK8yaS.html|UseCase_sj9oIjmFYEDK8yaS.html|sj9oIjmFYEDK8yaR" id="optionsj9oIjmFYEDK8yaR">HOJA DE VIDA : Use Case</option>
+<option value="shape|2977.0|744.0|200.0|113.0|UseCase_bVMkIjmFYEDK8ynE.html|UseCase_bVMkIjmFYEDK8ynE.html|bVMkIjmFYEDK8ynD" id="optionbVMkIjmFYEDK8ynD">SEGUIMIENTO DE ESTADOS : Use Case</option>
+<option value="shape|2108.0|400.0|223.0|93.0|UseCase_hwskIjmFYEDK8ynT.html|UseCase_hwskIjmFYEDK8ynT.html|hwskIjmFYEDK8ynS" id="optionhwskIjmFYEDK8ynS">REGISTRO DE DIAGNOSTICO : Use Case</option>
+<option value="shape|2108.0|516.0|226.0|103.0|UseCase_XWskIjmFYEDK8ynk.html|UseCase_XWskIjmFYEDK8ynk.html|XWskIjmFYEDK8ynj" id="optionXWskIjmFYEDK8ynj">ASIGNACION DE MANO DE OBRA : Use Case</option>
+<option value="shape|2113.0|275.0|223.0|110.0|UseCase_ZhckIjmFYEDK8yn1.html|UseCase_ZhckIjmFYEDK8yn1.html|ZhckIjmFYEDK8yn0" id="optionZhckIjmFYEDK8yn0">SOLICITUD DE REPUESTOS : Use Case</option>
+<option value="shape|2111.0|137.0|223.0|100.0|UseCase_PbckIjmFYEDK8yoG.html|UseCase_PbckIjmFYEDK8yoG.html|PbckIjmFYEDK8yoF" id="optionPbckIjmFYEDK8yoF">APERTURA DE ORDEN : Use Case</option>
+<option value="shape|638.0|143.0|197.0|112.0|UseCase_x1eUIjmFYEDK8ywe.html|UseCase_x1eUIjmFYEDK8ywe.html|x1eUIjmFYEDK8ywd" id="optionx1eUIjmFYEDK8ywd">CREAR INGRESOS : Use Case</option>
+<option value="shape|638.0|538.0|197.0|98.0|UseCase_qi_UIjmFYEDK8ywv.html|UseCase_qi_UIjmFYEDK8ywv.html|Ki.UIjmFYEDK8ywu" id="optionKi.UIjmFYEDK8ywu">CONSULTAR COMPRAS : Use Case</option>
+<option value="shape|2289.0|1082.0|197.0|98.0|UseCase_2MBUIjmFYEDK8yxA.html|UseCase_2MBUIjmFYEDK8yxA.html|2MBUIjmFYEDK8yw_" id="option2MBUIjmFYEDK8yw_">MODIFICACIÓN DE INGRESO : Use Case</option>
+<option value="shape|2539.0|841.0|361.0|136.0|UseCase_ArOaIjmFYEDK8y3V.html|UseCase_ArOaIjmFYEDK8y3V.html|ArOaIjmFYEDK8y3U" id="optionArOaIjmFYEDK8y3U">CONSULTA POR PLACA : Use Case</option>
+<option value="shape|2667.0|1197.0|255.0|163.0|UseCase_IOuaIjmFYEDK8y3k.html|UseCase_IOuaIjmFYEDK8y3k.html|IOuaIjmFYEDK8y3j" id="optionIOuaIjmFYEDK8y3j">VISUALIZACION DE PRESUPUESTO : Use Case</option>
+<option value="shape|2992.0|1241.0|259.0|151.0|UseCase_MUeaIjmFYEDK8y31.html|UseCase_MUeaIjmFYEDK8y31.html|MUeaIjmFYEDK8y30" id="optionMUeaIjmFYEDK8y30">APROBACIÓN : Use Case</option>
+<option value="shape|1605.0|222.0|204.0|125.0|UseCase_2DeaIjmFYEDK8y4G.html|UseCase_2DeaIjmFYEDK8y4G.html|2DeaIjmFYEDK8y4F" id="option2DeaIjmFYEDK8y4F">NOTIFICACIÓN : Use Case</option>
+<option value="shape|1750.0|899.0|245.0|120.0|UseCase_Ky_6IjmFYEDK8y_f.html|UseCase_Ky_6IjmFYEDK8y_f.html|Ky_6IjmFYEDK8y_e" id="optionKy_6IjmFYEDK8y_e">GENERACIÓN DE RECIBO : Use Case</option>
+<option value="shape|2291.0|1241.0|194.0|93.0|UseCase_EkAGIjmFYEDK8y__.html|UseCase_EkAGIjmFYEDK8y__.html|EkAGIjmFYEDK8y_." id="optionEkAGIjmFYEDK8y_.">REPORTE DE VENTAS : Use Case</option>
+<option value="shape|2021.0|918.0|204.0|101.0|UseCase_rFAGIjmFYEDK8zAQ.html|UseCase_rFAGIjmFYEDK8zAQ.html|rFAGIjmFYEDK8zAP" id="optionrFAGIjmFYEDK8zAP">ANULACIÓN DE FACTURA : Use Case</option>
+<option value="shape|3155.0|636.0|213.0|117.0|UseCase_5c3ZtjmFYEDMBhru.html|UseCase_5c3ZtjmFYEDMBhru.html|5c3ZtjmFYEDMBhrt" id="option5c3ZtjmFYEDMBhrt">REGISTRO DE CLIENTE : Use Case</option>
+<option value="shape|2992.0|1019.0|221.0|154.0|UseCase_f6KsmzmFYEDKDBFd.html|UseCase_f6KsmzmFYEDKDBFd.html|f6KsmzmFYEDKDBFc" id="optionf6KsmzmFYEDKDBFc">PROGRAMA DE FIDELIZACION : Use Case</option>
+<option value="shape|2664.0|1005.0|255.0|158.0|UseCase_ZTmsmzmFYEDKDBGZ.html|UseCase_ZTmsmzmFYEDKDBGZ.html|ZTmsmzmFYEDKDBGY" id="optionZTmsmzmFYEDKDBGY">CALIFICACION DEL SERVICIO : Use Case</option>
+</select>				</td>
+			</tr>
+		</table>
+		<table border="0" cellpadding="0" width="100%" cellspacing="0" style="position: relative; top: 24;">
+			<tr>
+				<td>
+					<img id="diagram" src="../images/Use_Case_Diagram1.png" usemap="#diagram_map" class="Image" width="4093" height="1850"/>
+					<map name="diagram_map">
+<area imageId="diagram" coords="291.0, 274.0, 291.0, 288.0, 636.0, 288.0, 636.0, 278.0, 715.0, 278.0, 715.0, 274.0" coords2="291.0, 274.0, 291.0, 288.0, 636.0, 288.0, 636.0, 278.0, 715.0, 278.0, 715.0, 274.0" shape="poly" alt=":Association" id="areadiagram_map_ZQy_wjmFYEDK8w3L_default" href="Association_hQy_wjmFYEDK8w3G.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1809.0, 112.0, 1809.0, 126.0, 3613.0, 126.0, 3613.0, 112.0" coords2="1809.0, 112.0, 1809.0, 126.0, 3613.0, 126.0, 3613.0, 112.0" shape="poly" alt=":Association" id="areadiagram_map_37B_wjmFYEDK8w3c_default" href="Association_ulB_wjmFYEDK8w3X.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="265.0, 394.0, 265.0, 408.0, 641.0, 417.91647, 641.0, 417.91647, 641.0, 411.0, 720.0, 411.0, 720.0, 406.0, 265.0, 394.0" coords2="265.0, 394.0, 265.0, 408.0, 641.0, 417.91647, 641.0, 417.91647, 641.0, 411.0, 720.0, 411.0, 720.0, 406.0, 265.0, 394.0" shape="poly" alt=":Association" id="areadiagram_map_3SAAIjmFYEDK8w4a_default" href="Association_VEAAIjmFYEDK8w4V.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="14.0, 59.0, 13.965031, 62.0, 11.0, 62.0, 11.0, 76.0, 13.801841, 76.0, -4.8018403, 1672.0, -8.0, 1672.0, -8.0, 1686.0, -4.9650307, 1686.0, -5.0, 1689.0, 9.0, 1689.0, 9.034969, 1686.0, 1618.0, 1686.0, 1618.0, 1672.0, 9.198159, 1672.0, 27.80184, 76.0, 113.0, 76.0, 113.0, 62.0, 27.96503, 62.0, 28.0, 59.0" coords2="14.0, 59.0, 13.965031, 62.0, 11.0, 62.0, 11.0, 76.0, 13.801841, 76.0, -4.8018403, 1672.0, -8.0, 1672.0, -8.0, 1686.0, -4.9650307, 1686.0, -5.0, 1689.0, 9.0, 1689.0, 9.034969, 1686.0, 1618.0, 1686.0, 1618.0, 1672.0, 9.198159, 1672.0, 27.80184, 76.0, 113.0, 76.0, 113.0, 62.0, 27.96503, 62.0, 28.0, 59.0" shape="poly" alt=":Generalization" id="areadiagram_map_6eqwIjmFYEDK8xUL_default" href="Generalization_4eqwIjmFYEDK8xUK.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1130.0, 1030.2203, 1130.0, 1038.0, 1117.8008, 1038.0, 1618.0, 1542.9905, 1618.0, 1533.0, 1628.0095, 1533.0, 1130.0, 1030.2203" coords2="1130.0, 1030.2203, 1130.0, 1038.0, 1117.8008, 1038.0, 1618.0, 1542.9905, 1618.0, 1533.0, 1628.0095, 1533.0, 1130.0, 1030.2203" shape="poly" alt=":Association" id="areadiagram_map_vBBIIjmFYEDK8yVa_default" href="Association_rBBIIjmFYEDK8yVV.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="863.0, 1154.1544, 863.0, 1161.0, 845.45685, 1161.0, 1618.0, 1540.056, 1618.0, 1533.0, 1627.8462, 1533.0, 1629.0, 1530.0, 863.0, 1154.1544" coords2="863.0, 1154.1544, 863.0, 1161.0, 845.45685, 1161.0, 1618.0, 1540.056, 1618.0, 1533.0, 1627.8462, 1533.0, 1629.0, 1530.0, 863.0, 1154.1544" shape="poly" alt=":Association" id="areadiagram_map_ZBhIIjmFYEDK8yVt_default" href="Association_uBhIIjmFYEDK8yVo.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="864.0, 1324.3292, 864.0, 1331.0, 832.53455, 1331.0, 1618.0, 1540.1362, 1618.0, 1533.0, 1626.9286, 1533.0, 1628.0, 1528.0, 864.0, 1324.3292" coords2="864.0, 1324.3292, 864.0, 1331.0, 832.53455, 1331.0, 1618.0, 1540.1362, 1618.0, 1533.0, 1626.9286, 1533.0, 1628.0, 1528.0, 864.0, 1324.3292" shape="poly" alt=":Association" id="areadiagram_map_ZlRIIjmFYEDK8yWC_default" href="Association_ulRIIjmFYEDK8yV9.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="3613.0, 332.0, 2305.1624, 641.0, 2334.0, 641.0, 2334.0, 648.6591, 3615.0, 346.0, 3613.0, 332.0" coords2="3613.0, 332.0, 2305.1624, 641.0, 2334.0, 641.0, 2334.0, 648.6591, 3615.0, 346.0, 3613.0, 332.0" shape="poly" alt=":Association" id="areadiagram_map_t6p4IjmFYEDK8yio_default" href="Association_x6p4IjmFYEDK8yij.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="3612.0, 330.0, 2961.8472, 657.0, 2977.0, 657.0, 2977.0, 664.8935, 3617.0, 343.0, 3612.0, 330.0" coords2="3612.0, 330.0, 2961.8472, 657.0, 2977.0, 657.0, 2977.0, 664.8935, 3617.0, 343.0, 3612.0, 330.0" shape="poly" alt=":Association" id="areadiagram_map_dZZ4IjmFYEDK8yi7_default" href="Association_JZZ4IjmFYEDK8yi2.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="4082.0, 59.0, 4082.0, 62.0, 3740.0, 62.0, 3740.0, 76.0, 4082.0, 76.0, 4082.0, 1672.0, 1853.0, 1672.0, 1853.0, 1686.0, 4082.0, 1686.0, 4082.0, 1689.0, 4096.0, 1689.0, 4096.0, 1686.0, 4099.0, 1686.0, 4099.0, 1672.0, 4096.0, 1672.0, 4096.0, 76.0, 4099.0, 76.0, 4099.0, 62.0, 4096.0, 62.0, 4096.0, 59.0" coords2="4082.0, 59.0, 4082.0, 62.0, 3740.0, 62.0, 3740.0, 76.0, 4082.0, 76.0, 4082.0, 1672.0, 1853.0, 1672.0, 1853.0, 1686.0, 4082.0, 1686.0, 4082.0, 1689.0, 4096.0, 1689.0, 4096.0, 1686.0, 4099.0, 1686.0, 4099.0, 1672.0, 4096.0, 1672.0, 4096.0, 76.0, 4099.0, 76.0, 4099.0, 62.0, 4096.0, 62.0, 4096.0, 59.0" shape="poly" alt=":Generalization" id="areadiagram_map_Iej4IjmFYEDK8ykQ_default" href="Generalization_Xuj4IjmFYEDK8ykP.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="3613.0, 331.0, 2589.8037, 641.0, 2616.0, 641.0, 2616.0, 648.26294, 3616.0, 345.0, 3613.0, 331.0" coords2="3613.0, 331.0, 2589.8037, 641.0, 2616.0, 641.0, 2616.0, 648.26294, 3616.0, 345.0, 3613.0, 331.0" shape="poly" alt=":Association" id="areadiagram_map_rcEEIjmFYEDK8yll_default" href="Association_isEEIjmFYEDK8ylg.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="2884.0, 770.0, 2884.0, 861.19946, 2883.0, 861.0, 2881.0, 875.0, 2884.0, 875.5984, 2884.0, 880.0, 2898.0, 880.0, 2898.0, 878.3908, 3613.0, 1021.0054, 3613.0, 1015.0, 3624.1428, 1015.0, 3625.0, 1009.0, 2898.0, 863.99194, 2898.0, 770.0" coords2="2884.0, 770.0, 2884.0, 861.19946, 2883.0, 861.0, 2881.0, 875.0, 2884.0, 875.5984, 2884.0, 880.0, 2898.0, 880.0, 2898.0, 878.3908, 3613.0, 1021.0054, 3613.0, 1015.0, 3624.1428, 1015.0, 3625.0, 1009.0, 2898.0, 863.99194, 2898.0, 770.0" shape="poly" alt=":Association" id="areadiagram_map_gWKEIjmFYEDK8ymR_default" href="Association_jmKEIjmFYEDK8ymM.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="2334.0, 218.0, 2334.0, 232.0, 3613.0, 232.0, 3613.0, 218.0" coords2="2334.0, 218.0, 2334.0, 232.0, 3613.0, 232.0, 3613.0, 218.0" shape="poly" alt=":Association" id="areadiagram_map_Va3kIjmFYEDK8ytP_default" href="Association_Ba3kIjmFYEDK8ytK.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="3615.0, 334.0, 2254.0, 396.0, 2254.0, 400.0, 2331.0, 400.0, 2331.0, 406.49228, 3615.0, 348.0, 3615.0, 334.0" coords2="3615.0, 334.0, 2254.0, 396.0, 2254.0, 400.0, 2331.0, 400.0, 2331.0, 406.49228, 3615.0, 348.0, 3615.0, 334.0" shape="poly" alt=":Association" id="areadiagram_map_cmIUIjmFYEDK8yt._default" href="Association_rGIUIjmFYEDK8yt5.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="2336.0, 281.0, 2336.0, 295.0, 3613.0, 295.0, 3613.0, 281.0" coords2="2336.0, 281.0, 2336.0, 295.0, 3613.0, 295.0, 3613.0, 281.0" shape="poly" alt=":Association" id="areadiagram_map_St4UIjmFYEDK8yud_default" href="Association_Ut4UIjmFYEDK8yuY.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="3613.0, 332.0, 2279.2485, 516.0, 2334.0, 516.0, 2334.0, 522.7226, 2334.0, 522.7226, 3615.0, 346.0, 3613.0, 332.0" coords2="3613.0, 332.0, 2279.2485, 516.0, 2334.0, 516.0, 2334.0, 522.7226, 2334.0, 522.7226, 3615.0, 346.0, 3613.0, 332.0" shape="poly" alt=":Association" id="areadiagram_map_rs0UIjmFYEDK8yu6_default" href="Association_Js0UIjmFYEDK8yu1.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="3177.0, 851.3006, 3177.0, 857.0, 3149.7126, 857.0, 3613.0, 1021.5143, 3613.0, 1015.0, 3621.9285, 1015.0, 3623.0, 1010.0, 3177.0, 851.3006" coords2="3177.0, 851.3006, 3177.0, 857.0, 3149.7126, 857.0, 3613.0, 1021.5143, 3613.0, 1015.0, 3621.9285, 1015.0, 3623.0, 1010.0, 3177.0, 851.3006" shape="poly" alt=":Association" id="areadiagram_map_tdMUIjmFYEDK8yvR_default" href="Association_xdMUIjmFYEDK8yvM.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="3610.0, 330.0, 3034.2866, 658.0, 3026.0, 658.0, 3026.0, 662.72107, 3022.0, 665.0, 3026.0, 673.6667, 3026.0, 744.0, 3040.0, 744.0, 3040.0, 671.16327, 3616.0, 343.0, 3610.0, 330.0" coords2="3610.0, 330.0, 3034.2866, 658.0, 3026.0, 658.0, 3026.0, 662.72107, 3022.0, 665.0, 3026.0, 673.6667, 3026.0, 744.0, 3040.0, 744.0, 3040.0, 671.16327, 3616.0, 343.0, 3610.0, 330.0" shape="poly" alt=":Association" id="areadiagram_map_6YqUIjmFYEDK8ywE_default" href="Association_VIqUIjmFYEDK8yv_.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="282.0, 388.0, 278.0, 402.0, 638.0, 544.0101, 638.0, 538.0, 661.2994, 538.0, 282.0, 388.0" coords2="282.0, 388.0, 278.0, 402.0, 638.0, 544.0101, 638.0, 538.0, 661.2994, 538.0, 282.0, 388.0" shape="poly" alt=":Association" id="areadiagram_map_8y6sIjmFYEDK8y23_default" href="Association_oy6sIjmFYEDK8y2y.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="2900.0, 972.74, 2900.0, 977.0, 2781.0, 977.0, 2781.0, 981.0, 3613.0, 1021.1318, 3613.0, 1015.0, 3631.0, 1015.0, 3631.0, 1008.0, 2900.0, 972.74" coords2="2900.0, 972.74, 2900.0, 977.0, 2781.0, 977.0, 2781.0, 981.0, 3613.0, 1021.1318, 3613.0, 1015.0, 3631.0, 1015.0, 3631.0, 1008.0, 2900.0, 972.74" shape="poly" alt=":Association" id="areadiagram_map_AzT6IjmFYEDK8y9z_default" href="Association_7TT6IjmFYEDK8y9u.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="2922.0, 1200.0, 2922.0, 1214.0, 3613.0, 1214.0, 3613.0, 1200.0" coords2="2922.0, 1200.0, 2922.0, 1214.0, 3613.0, 1214.0, 3613.0, 1200.0" shape="poly" alt=":Association" id="areadiagram_map_uRz6IjmFYEDK8y.G_default" href="Association_SRz6IjmFYEDK8y_B.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="2291.0, 1327.1664, 1842.0, 1530.0, 1843.1538, 1533.0, 1853.0, 1533.0, 1853.0, 1540.2896, 2309.65, 1334.0, 2291.0, 1334.0, 2291.0, 1327.1664" coords2="2291.0, 1327.1664, 1842.0, 1530.0, 1843.1538, 1533.0, 1853.0, 1533.0, 1853.0, 1540.2896, 2309.65, 1334.0, 2291.0, 1334.0, 2291.0, 1327.1664" shape="poly" alt=":Association" id="areadiagram_map_Z7ZGIjmFYEDK8zEX_default" href="Association_C7ZGIjmFYEDK8zES.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="2021.0, 1003.25946, 1846.3083, 1533.0, 1853.0, 1533.0, 1853.0, 1541.9286, 1853.0, 1541.9286, 1858.0, 1543.0, 2031.1072, 1019.0, 2021.0, 1019.0, 2021.0, 1003.25946" coords2="2021.0, 1003.25946, 1846.3083, 1533.0, 1853.0, 1533.0, 1853.0, 1541.9286, 1853.0, 1541.9286, 1858.0, 1543.0, 2031.1072, 1019.0, 2021.0, 1019.0, 2021.0, 1003.25946" shape="poly" alt=":Association" id="areadiagram_map_ed5GIjmFYEDK8zEq_default" href="Association_8d5GIjmFYEDK8zEl.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1611.0, 1006.0, 1611.0, 1543.0, 1618.0, 1543.0, 1618.0, 1533.0, 1625.0, 1533.0, 1625.0, 1006.0" coords2="1611.0, 1006.0, 1611.0, 1543.0, 1618.0, 1543.0, 1618.0, 1533.0, 1625.0, 1533.0, 1625.0, 1006.0" shape="poly" alt=":Association" id="areadiagram_map_t5EmIjmFYEDK8zHW_default" href="Association_W5EmIjmFYEDK8zHR.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1421.0, 985.7619, 1421.0, 1011.0, 1414.9149, 1011.0, 1613.0, 1543.0, 1618.0, 1541.9286, 1618.0, 1541.9286, 1618.0, 1533.0, 1624.3982, 1533.0, 1421.0, 985.7619" coords2="1421.0, 985.7619, 1421.0, 1011.0, 1414.9149, 1011.0, 1613.0, 1543.0, 1618.0, 1541.9286, 1618.0, 1541.9286, 1618.0, 1533.0, 1624.3982, 1533.0, 1421.0, 985.7619" shape="poly" alt=":Association" id="areadiagram_map_HfHwkjmFYEDK2AsZ_default" href="Association_jfHwkjmFYEDK2AsU.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="2291.0, 1000.83795, 1844.517, 1533.0, 1853.0, 1533.0, 1853.0, 1545.0, 2301.0251, 1011.0, 2291.0, 1011.0, 2291.0, 1000.83795" coords2="2291.0, 1000.83795, 1844.517, 1533.0, 1853.0, 1533.0, 1853.0, 1545.0, 2301.0251, 1011.0, 2291.0, 1011.0, 2291.0, 1000.83795" shape="poly" alt=":Association" id="areadiagram_map_FS3wkjmFYEDK2Asu_default" href="Association_BS3wkjmFYEDK2Asp.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="291.0, 107.0, 291.0, 121.0, 1594.0, 121.0, 1594.0, 107.0" coords2="291.0, 107.0, 291.0, 121.0, 1594.0, 121.0, 1594.0, 107.0" shape="poly" alt=":Association" id="areadiagram_map_ZuhYkjmFYEDK2Aw5_default" href="Association_GuhYkjmFYEDK2Aw0.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="835.0, 1016.47815, 835.0, 1022.0, 818.5626, 1022.0, 1618.0, 1541.0521, 1618.0, 1541.0521, 1618.0, 1533.0, 1628.2727, 1533.0, 1629.0, 1532.0, 835.0, 1016.47815, 1618.0, 1541.0521, 1618.0, 1541.0521, 1618.0, 1541.0521, 1618.0, 1541.0521" coords2="835.0, 1016.47815, 835.0, 1022.0, 818.5626, 1022.0, 1618.0, 1541.0521, 1618.0, 1541.0521, 1618.0, 1533.0, 1628.2727, 1533.0, 1629.0, 1532.0, 835.0, 1016.47815, 1618.0, 1541.0521, 1618.0, 1541.0521, 1618.0, 1541.0521, 1618.0, 1541.0521" shape="poly" alt=":Association" id="areadiagram_map_fIJSyjmFYEDMDg9i_default" href="Association_JIJSyjmFYEDMDg9d.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="291.0, 184.0, 291.0, 198.0, 638.0, 198.0, 638.0, 184.0" coords2="291.0, 184.0, 291.0, 198.0, 638.0, 198.0, 638.0, 184.0" shape="poly" alt=":Association" id="areadiagram_map_Qq1KyjmFYEDMDhCj_default" href="Association_XK1KyjmFYEDMDhCe.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="2289.0, 1170.2432, 1841.0, 1533.0, 1853.0, 1533.0, 1853.0, 1541.5708, 2299.5352, 1180.0, 2289.0, 1180.0, 2289.0, 1170.2432" coords2="2289.0, 1170.2432, 1841.0, 1533.0, 1853.0, 1533.0, 1853.0, 1541.5708, 2299.5352, 1180.0, 2289.0, 1180.0, 2289.0, 1170.2432" shape="poly" alt=":Association" id="areadiagram_map_USDKyjmFYEDMDhDU_default" href="Association_PiDKyjmFYEDMDhDP.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1767.0, 1019.0, 1767.0, 1533.0, 1781.0, 1533.0, 1781.0, 1019.0" coords2="1767.0, 1019.0, 1767.0, 1533.0, 1781.0, 1533.0, 1781.0, 1019.0" shape="poly" alt=":Association" id="areadiagram_map__A96yjmFYEDMDhK2_default" href="Association_zA96yjmFYEDMDhKx.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="289.0, 384.0, 278.0, 392.0, 638.0, 929.1277, 638.0, 917.0, 646.2335, 917.0, 289.0, 384.0" coords2="289.0, 384.0, 278.0, 392.0, 638.0, 929.1277, 638.0, 917.0, 646.2335, 917.0, 289.0, 384.0" shape="poly" alt=":Association" id="areadiagram_map_PzBGtjmFYEDMBhcp_default" href="Association_9zBGtjmFYEDMBhck.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1809.0, 222.0, 1809.0, 236.0, 2111.0, 236.0, 2111.0, 222.0" coords2="1809.0, 222.0, 1809.0, 236.0, 2111.0, 236.0, 2111.0, 222.0" shape="poly" alt=":Association" id="areadiagram_map_D6MJtjmFYEDMBhg._default" href="Association_R6MJtjmFYEDMBhg5.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="1809.0, 280.0, 1809.0, 294.0, 2113.0, 294.0, 2113.0, 280.0" coords2="1809.0, 280.0, 1809.0, 294.0, 2113.0, 294.0, 2113.0, 280.0" shape="poly" alt=":Association" id="areadiagram_map_ewsJtjmFYEDMBhhR_default" href="Association_6wsJtjmFYEDMBhhM.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="3613.0, 331.0, 2743.298, 658.0, 2734.0, 658.0, 2734.0, 661.49603, 2730.0, 663.0, 2734.0, 677.0, 2734.0, 841.0, 2748.0, 841.0, 2748.0, 671.73016, 3616.0, 345.0, 3613.0, 331.0" coords2="3613.0, 331.0, 2743.298, 658.0, 2734.0, 658.0, 2734.0, 661.49603, 2730.0, 663.0, 2734.0, 677.0, 2734.0, 841.0, 2748.0, 841.0, 2748.0, 671.73016, 3616.0, 345.0, 3613.0, 331.0" shape="poly" alt=":Association" id="areadiagram_map_FQdJtjmFYEDMBhig_default" href="Association_hQdJtjmFYEDMBhib.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="2462.0, 849.0, 2462.0, 858.0, 2385.0, 858.0, 2385.0, 863.0, 2539.0, 863.0, 2539.0, 849.0" coords2="2462.0, 849.0, 2462.0, 858.0, 2385.0, 858.0, 2385.0, 863.0, 2539.0, 863.0, 2539.0, 849.0" shape="poly" alt=":Extend" id="areadiagram_map_CSXJtjmFYEDMBhkK_default" href="Extend_4SXJtjmFYEDMBhkI.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="3368.0, 742.5036, 3368.0, 753.0, 3358.4646, 753.0, 3613.0, 1024.9316, 3613.0, 1015.0, 3623.064, 1015.0, 3368.0, 742.5036" coords2="3368.0, 742.5036, 3368.0, 753.0, 3358.4646, 753.0, 3613.0, 1024.9316, 3613.0, 1015.0, 3623.064, 1015.0, 3368.0, 742.5036" shape="poly" alt=":Association" id="areadiagram_map_YDPZtjmFYEDMBhsR_default" href="Association_79PZtjmFYEDMBhsM.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="3605.0, 329.0, 3362.1492, 636.0, 3368.0, 636.0, 3368.0, 650.50946, 3616.0, 337.0, 3605.0, 329.0" coords2="3605.0, 329.0, 3362.1492, 636.0, 3368.0, 636.0, 3368.0, 650.50946, 3616.0, 337.0, 3605.0, 329.0" shape="poly" alt=":Association" id="areadiagram_map_BzvZtjmFYEDMBhsk_default" href="Association_azvZtjmFYEDMBhsf.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="3213.0, 1133.0, 3213.0, 1147.0, 3613.0, 1147.0, 3613.0, 1133.0" coords2="3213.0, 1133.0, 3213.0, 1147.0, 3613.0, 1147.0, 3613.0, 1133.0" shape="poly" alt=":Association" id="areadiagram_map_L_GsmzmFYEDKDBGQ_default" href="Association_V_GsmzmFYEDKDBGL.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="2919.0, 1156.5981, 2919.0, 1163.0, 2901.3928, 1163.0, 2958.0, 1192.6262, 2958.0, 1198.0, 2968.2678, 1198.0, 2974.0, 1201.0, 2975.1538, 1198.0, 3613.0, 1198.0, 3613.0, 1184.0, 2971.3572, 1184.0, 2919.0, 1156.5981" coords2="2919.0, 1156.5981, 2919.0, 1163.0, 2901.3928, 1163.0, 2958.0, 1192.6262, 2958.0, 1198.0, 2968.2678, 1198.0, 2974.0, 1201.0, 2975.1538, 1198.0, 3613.0, 1198.0, 3613.0, 1184.0, 2971.3572, 1184.0, 2919.0, 1156.5981" shape="poly" alt=":Association" id="areadiagram_map_TV2smzmFYEDKDBG4_default" href="Association_lV2smzmFYEDKDBGz.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="3251.0, 1263.0, 3251.0, 1277.0, 3613.0, 1277.0, 3613.0, 1263.0" coords2="3251.0, 1263.0, 3251.0, 1277.0, 3613.0, 1277.0, 3613.0, 1263.0" shape="poly" alt=":Association" id="areadiagram_map_nbesmzmFYEDKDBHW_default" href="Association_DbesmzmFYEDKDBHR.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;lt;b charset=&amp;quot;utf-8&amp;quot; id=&amp;quot;docs-internal-guid-c249aac4-7fff-a7fa-9d0b-9c8f7eb2e563&amp;quot; style=&amp;quot;font-weight:normal;&amp;quot;&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;background-color:#ffffff;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;El 
+      sistema debe permitir que el cliente califique el servicio recibido 
+      mediante una puntuaci&amp;#243;n y un comentario opcional una vez finalizada la 
+      orden de servicio. La calificaci&amp;#243;n debe quedar registrada para consulta 
+      del administrador.&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/b&amp;gt;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="2664, 1005, 2919, 1163" coords2="2664, 1005, 2919, 1163" shape="rect" alt="CALIFICACION DEL SERVICIO:Use Case" id="areadiagram_map_ZTmsmzmFYEDKDBGY_default" href="UseCase_ZTmsmzmFYEDKDBGZ.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','2664, 1005, 2919, 1163',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_yuiYIjmFYEDK8yhr.html/CLIENTE/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '2664, 1005, 2919, 1163'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;lt;b charset=&amp;quot;utf-8&amp;quot; id=&amp;quot;docs-internal-guid-524ddd90-7fff-a52a-8a09-699dd7c47e0e&amp;quot; style=&amp;quot;font-weight:normal;&amp;quot;&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;background-color:#ffffff;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;El 
+      sistema debe permitir acumular puntos o beneficios de fidelizaci&amp;#243;n para 
+      los clientes por cada orden de servicio pagada, los cuales podr&amp;#225;n 
+      consultarse en el portal y utilizarse en futuros servicios.&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/b&amp;gt;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="2992, 1019, 3213, 1173" coords2="2992, 1019, 3213, 1173" shape="rect" alt="PROGRAMA DE FIDELIZACION:Use Case" id="areadiagram_map_f6KsmzmFYEDKDBFc_default" href="UseCase_f6KsmzmFYEDKDBFd.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','2992, 1019, 3213, 1173',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_yuiYIjmFYEDK8yhr.html/CLIENTE/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '2992, 1019, 3213, 1173'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      Permite registrar nuevos clientes en la plataforma, almacenando 
+      informaci&amp;#243;n detallada que facilitar&amp;#225; futuras ventas y comunicaci&amp;#243;n.
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="3155, 636, 3368, 753" coords2="3155, 636, 3368, 753" shape="rect" alt="REGISTRO DE CLIENTE:Use Case" id="areadiagram_map_5c3ZtjmFYEDMBhrt_default" href="UseCase_5c3ZtjmFYEDMBhru.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','3155, 636, 3368, 753',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_yuiYIjmFYEDK8yhr.html/CLIENTE/Actor','Actor_rb7fwjmFYEDK8w2k.html/MECANICO/Actor','Actor_lPkAIjmFYEDK8w5D.html/ADMINISTRADOR/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '3155, 636, 3368, 753'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;lt;b charset=&amp;quot;utf-8&amp;quot; id=&amp;quot;docs-internal-guid-193d9687-7fff-6d6b-ab00-f9be2b15c13b&amp;quot; style=&amp;quot;font-weight:normal;&amp;quot;&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;El 
+      sistema debe permitir anular un recibo por error administrativo, lo cual 
+      debe reintegrar los repuestos al stock y reabrir la orden de servicio.&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;nbsp;&amp;lt;/b&amp;gt;
+    &amp;lt;/p&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;nbsp;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="2021, 918, 2225, 1019" coords2="2021, 918, 2225, 1019" shape="rect" alt="ANULACIÓN DE FACTURA:Use Case" id="areadiagram_map_rFAGIjmFYEDK8zAP_default" href="UseCase_rFAGIjmFYEDK8zAQ.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','2021, 918, 2225, 1019',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_lPkAIjmFYEDK8w5D.html/ADMINISTRADOR/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '2021, 918, 2225, 1019'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;nbsp;&amp;lt;b charset=&amp;quot;utf-8&amp;quot; id=&amp;quot;docs-internal-guid-7046900c-7fff-0489-0b7a-88942629e191&amp;quot; style=&amp;quot;font-weight:normal;&amp;quot;&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;El 
+      sistema debe permitir al Administrador consultar y reimprimir recibos 
+      hist&amp;#243;ricos para auditor&amp;#237;a y contabilidad.&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;nbsp;&amp;lt;/b&amp;gt;
+    &amp;lt;/p&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;nbsp;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="2291, 1241, 2485, 1334" coords2="2291, 1241, 2485, 1334" shape="rect" alt="REPORTE DE VENTAS:Use Case" id="areadiagram_map_EkAGIjmFYEDK8y_._default" href="UseCase_EkAGIjmFYEDK8y__.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','2291, 1241, 2485, 1334',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_lPkAIjmFYEDK8w5D.html/ADMINISTRADOR/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '2291, 1241, 2485, 1334'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;lt;b charset=&amp;quot;utf-8&amp;quot; id=&amp;quot;docs-internal-guid-2e8baa86-7fff-60f0-0fa6-038bead546ca&amp;quot; style=&amp;quot;font-weight:normal;&amp;quot;&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;El 
+      sistema debe generar autom&amp;#225;ticamente un documento de cobro que incluya 
+      &amp;#250;nicamente los servicios y repuestos &amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:700;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;autorizados&amp;lt;/span&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt; 
+      por el cliente en el m&amp;#243;dulo anterior.&amp;lt;/span&amp;gt;&amp;lt;/font&amp;gt;&amp;nbsp;&amp;lt;/b&amp;gt;
+    &amp;lt;/p&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;nbsp;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="1750, 899, 1995, 1019" coords2="1750, 899, 1995, 1019" shape="rect" alt="GENERACIÓN DE RECIBO:Use Case" id="areadiagram_map_Ky_6IjmFYEDK8y_e_default" href="UseCase_Ky_6IjmFYEDK8y_f.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','1750, 899, 1995, 1019',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_yuiYIjmFYEDK8yhr.html/CLIENTE/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '1750, 899, 1995, 1019'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      Permite enviar alertas autom&amp;#225;ticas a clientes y administradores seg&amp;#250;n 
+      eventos relevantes en la plataforma.
+    &amp;lt;/p&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;nbsp;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="1605, 222, 1809, 347" coords2="1605, 222, 1809, 347" shape="rect" alt="NOTIFICACIÓN:Use Case" id="areadiagram_map_2DeaIjmFYEDK8y4F_default" href="UseCase_2DeaIjmFYEDK8y4G.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','1605, 222, 1809, 347',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_yuiYIjmFYEDK8yhr.html/CLIENTE/Actor','Actor_rb7fwjmFYEDK8w2k.html/MECANICO/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '1605, 222, 1809, 347'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;lt;b charset=&amp;quot;utf-8&amp;quot; id=&amp;quot;docs-internal-guid-49a040c6-7fff-7c51-2c34-d8e71707abfe&amp;quot; style=&amp;quot;font-weight:normal;&amp;quot;&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;El 
+      sistema debe permitir al cliente &amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:700;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;autorizar 
+      o rechazar&amp;lt;/span&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt; 
+      cada &amp;#237;tem del presupuesto de forma individual o global.&amp;lt;/span&amp;gt;&amp;lt;/font&amp;gt;&amp;nbsp;&amp;lt;/b&amp;gt;
+    &amp;lt;/p&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;nbsp;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="2992, 1241, 3251, 1392" coords2="2992, 1241, 3251, 1392" shape="rect" alt="APROBACIÓN:Use Case" id="areadiagram_map_MUeaIjmFYEDK8y30_default" href="UseCase_MUeaIjmFYEDK8y31.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','2992, 1241, 3251, 1392',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_yuiYIjmFYEDK8yhr.html/CLIENTE/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '2992, 1241, 3251, 1392'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;lt;b charset=&amp;quot;utf-8&amp;quot; id=&amp;quot;docs-internal-guid-7b4b1054-7fff-0df1-9655-89720dba7c8b&amp;quot; style=&amp;quot;font-weight:normal;&amp;quot;&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;El 
+      cliente debe poder leer el detalle de los repuestos y servicios 
+      sugeridos por el mec&amp;#225;nico con sus precios unitarios y totales.&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;nbsp;&amp;lt;/b&amp;gt;
+    &amp;lt;/p&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;nbsp;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="2667, 1197, 2922, 1360" coords2="2667, 1197, 2922, 1360" shape="rect" alt="VISUALIZACION DE PRESUPUESTO:Use Case" id="areadiagram_map_IOuaIjmFYEDK8y3j_default" href="UseCase_IOuaIjmFYEDK8y3k.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','2667, 1197, 2922, 1360',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_yuiYIjmFYEDK8yhr.html/CLIENTE/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '2667, 1197, 2922, 1360'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;lt;b charset=&amp;quot;utf-8&amp;quot; id=&amp;quot;docs-internal-guid-762d946d-7fff-83d7-0906-f689635ab1ff&amp;quot; style=&amp;quot;font-weight:normal;&amp;quot;&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;El 
+      sistema debe habilitar una interfaz web p&amp;#250;blica donde el Cliente, 
+      ingresando &amp;#250;nicamente su &amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:700;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;Placa&amp;lt;/span&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;, 
+      pueda ver el estado de su moto.&amp;lt;/span&amp;gt;&amp;lt;/font&amp;gt;&amp;nbsp;&amp;lt;/b&amp;gt;
+    &amp;lt;/p&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;nbsp;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="2539, 841, 2900, 977" coords2="2539, 841, 2900, 977" shape="rect" alt="CONSULTA POR PLACA:Use Case" id="areadiagram_map_ArOaIjmFYEDK8y3U_default" href="UseCase_ArOaIjmFYEDK8y3V.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','2539, 841, 2900, 977',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_yuiYIjmFYEDK8yhr.html/CLIENTE/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '2539, 841, 2900, 977'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;lt;b charset=&amp;quot;utf-8&amp;quot; id=&amp;quot;docs-internal-guid-3c409040-7fff-30f8-db5b-f52d40853fb1&amp;quot; style=&amp;quot;font-weight:normal;&amp;quot;&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;El 
+      sistema debe permitir editar un ingreso solo si se detectan errores en 
+      la cantidad reportada antes de que el producto sea utilizado.&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/b&amp;gt;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="2289, 1082, 2486, 1180" coords2="2289, 1082, 2486, 1180" shape="rect" alt="MODIFICACIÓN DE INGRESO:Use Case" id="areadiagram_map_2MBUIjmFYEDK8yw__default" href="UseCase_2MBUIjmFYEDK8yxA.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','2289, 1082, 2486, 1180',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_Bz_fwjmFYEDK8w2S.html/ALMACENISTA/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '2289, 1082, 2486, 1180'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;nbsp;&amp;lt;b charset=&amp;quot;utf-8&amp;quot; id=&amp;quot;docs-internal-guid-7f85b97c-7fff-0017-ea41-9b9d0c4ad3f4&amp;quot; style=&amp;quot;font-weight:normal;&amp;quot;&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;El 
+      sistema debe permitir consultar cu&amp;#225;ndo y a qu&amp;#233; precio se compraron 
+      determinados repuestos para analizar variaciones de costo.&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;nbsp;&amp;lt;/b&amp;gt;
+    &amp;lt;/p&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;nbsp;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="638, 538, 835, 636" coords2="638, 538, 835, 636" shape="rect" alt="CONSULTAR COMPRAS:Use Case" id="areadiagram_map_Ki.UIjmFYEDK8ywu_default" href="UseCase_qi_UIjmFYEDK8ywv.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','638, 538, 835, 636',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_yuiYIjmFYEDK8yhr.html/CLIENTE/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '638, 538, 835, 636'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p data-path-to-node=&amp;quot;5&amp;quot; style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;lt;b charset=&amp;quot;utf-8&amp;quot; id=&amp;quot;docs-internal-guid-6107ef92-7fff-eeab-7f3a-e549867963b8&amp;quot; style=&amp;quot;font-weight:normal;&amp;quot;&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:700;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;Asegurar 
+      el registro y control adecuado de los nuevos repuestos que ingresan al 
+      almac&amp;#233;n, garantizando trazabilidad, actualizaci&amp;#243;n del inventario y 
+      respaldo documental.&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/b&amp;gt;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="638, 143, 835, 255" coords2="638, 143, 835, 255" shape="rect" alt="CREAR INGRESOS:Use Case" id="areadiagram_map_x1eUIjmFYEDK8ywd_default" href="UseCase_x1eUIjmFYEDK8ywe.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','638, 143, 835, 255',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_Bz_fwjmFYEDK8w2S.html/ALMACENISTA/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '638, 143, 835, 255'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;lt;b charset=&amp;quot;utf-8&amp;quot; id=&amp;quot;docs-internal-guid-b977fe70-7fff-5174-d7b8-9db124cd6e01&amp;quot; style=&amp;quot;font-weight:normal;&amp;quot;&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;El 
+      sistema debe permitir generar una Orden de Servicio vinculada a una 
+      Placa, registrando el estado en que se recibe la moto y el motivo de 
+      ingreso.&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;nbsp;&amp;lt;/b&amp;gt;
+    &amp;lt;/p&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;nbsp;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="2111, 137, 2334, 237" coords2="2111, 137, 2334, 237" shape="rect" alt="APERTURA DE ORDEN:Use Case" id="areadiagram_map_PbckIjmFYEDK8yoF_default" href="UseCase_PbckIjmFYEDK8yoG.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','2111, 137, 2334, 237',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_rb7fwjmFYEDK8w2k.html/MECANICO/Actor','Actor_yuiYIjmFYEDK8yhr.html/CLIENTE/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '2111, 137, 2334, 237'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;lt;b charset=&amp;quot;utf-8&amp;quot; id=&amp;quot;docs-internal-guid-75f7c901-7fff-1be9-2cb0-7c27f876e6c6&amp;quot; style=&amp;quot;font-weight:normal;&amp;quot;&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;El 
+      sistema debe permitir al Mec&amp;#225;nico agregar a la orden los repuestos 
+      necesarios tomados del &amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:700;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;M&amp;#243;dulo 
+      de Productos&amp;lt;/span&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;, 
+      los cuales quedar&amp;#225;n en estado &amp;quot;Pendiente de Autorizaci&amp;#243;n&amp;lt;/span&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/b&amp;gt;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="2113, 275, 2336, 385" coords2="2113, 275, 2336, 385" shape="rect" alt="SOLICITUD DE REPUESTOS:Use Case" id="areadiagram_map_ZhckIjmFYEDK8yn0_default" href="UseCase_ZhckIjmFYEDK8yn1.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','2113, 275, 2336, 385',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_rb7fwjmFYEDK8w2k.html/MECANICO/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '2113, 275, 2336, 385'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;lt;b charset=&amp;quot;utf-8&amp;quot; id=&amp;quot;docs-internal-guid-0e97764f-7fff-547b-1854-68a1513aad33&amp;quot; style=&amp;quot;font-weight:normal;&amp;quot;&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;El 
+      sistema debe permitir agregar los servicios realizados (mano de obra) 
+      con sus respectivos tiempos y costos&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/b&amp;gt;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="2108, 516, 2334, 619" coords2="2108, 516, 2334, 619" shape="rect" alt="ASIGNACION DE MANO DE OBRA:Use Case" id="areadiagram_map_XWskIjmFYEDK8ynj_default" href="UseCase_XWskIjmFYEDK8ynk.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','2108, 516, 2334, 619',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_rb7fwjmFYEDK8w2k.html/MECANICO/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '2108, 516, 2334, 619'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;lt;b charset=&amp;quot;utf-8&amp;quot; id=&amp;quot;docs-internal-guid-02a0186e-7fff-c614-a5a7-b4011e1061ba&amp;quot; style=&amp;quot;font-weight:normal;&amp;quot;&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;El 
+      sistema debe permitir al Mec&amp;#225;nico redactar un diagn&amp;#243;stico t&amp;#233;cnico 
+      detallado y adjuntar el estado de la moto.&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/b&amp;gt;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="2108, 400, 2331, 493" coords2="2108, 400, 2331, 493" shape="rect" alt="REGISTRO DE DIAGNOSTICO:Use Case" id="areadiagram_map_hwskIjmFYEDK8ynS_default" href="UseCase_hwskIjmFYEDK8ynT.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','2108, 400, 2331, 493',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_rb7fwjmFYEDK8w2k.html/MECANICO/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '2108, 400, 2331, 493'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;lt;b charset=&amp;quot;utf-8&amp;quot; id=&amp;quot;docs-internal-guid-581423d3-7fff-9817-986f-e88d7484d766&amp;quot; style=&amp;quot;font-weight:normal;&amp;quot;&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;El 
+      sistema debe actualizar el estado de la orden (Recibida -&amp;​gt; En 
+      Diagn&amp;#243;stico -&amp;​gt; Pendiente Autorizaci&amp;#243;n -&amp;​gt; En Reparaci&amp;#243;n -&amp;​gt; Lista para 
+      Entrega).&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/b&amp;gt;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="2977, 744, 3177, 857" coords2="2977, 744, 3177, 857" shape="rect" alt="SEGUIMIENTO DE ESTADOS:Use Case" id="areadiagram_map_bVMkIjmFYEDK8ynD_default" href="UseCase_bVMkIjmFYEDK8ynE.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','2977, 744, 3177, 857',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_rb7fwjmFYEDK8w2k.html/MECANICO/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '2977, 744, 3177, 857'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" coords="3613, 1015, 3817, 1402" coords2="3613, 1015, 3817, 1402" shape="rect" alt="CLIENTE:Actor" id="areadiagram_map_yuiYIjmFYEDK8yhq_default" href="Actor_yuiYIjmFYEDK8yhr.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;lt;b charset=&amp;quot;utf-8&amp;quot; id=&amp;quot;docs-internal-guid-d25a2b4f-7fff-1e4c-5d93-0607f1c46c6f&amp;quot; style=&amp;quot;font-weight:normal;&amp;quot;&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;El 
+      sistema debe permitir visualizar el historial completo de todos los 
+      servicios, repuestos instalados y diagn&amp;#243;sticos previos realizados a una 
+      moto mediante la b&amp;#250;squeda por placa.&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;nbsp;&amp;lt;/b&amp;gt;
+    &amp;lt;/p&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;nbsp;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="2265, 772, 2462, 858" coords2="2265, 772, 2462, 858" shape="rect" alt="HOJA DE VIDA:Use Case" id="areadiagram_map_sj9oIjmFYEDK8yaR_default" href="UseCase_sj9oIjmFYEDK8yaS.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','2265, 772, 2462, 858',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_rb7fwjmFYEDK8w2k.html/MECANICO/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '2265, 772, 2462, 858'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;lt;b charset=&amp;quot;utf-8&amp;quot; id=&amp;quot;docs-internal-guid-83fed41d-7fff-c310-6e66-0256c0475b78&amp;quot; style=&amp;quot;font-weight:normal;&amp;quot;&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;El 
+      sistema debe permitir asociar cada moto a los datos de un cliente 
+      (Nombre, C&amp;#233;dula, Tel&amp;#233;fono) para trazabilidad.&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;nbsp;&amp;lt;/b&amp;gt;
+    &amp;lt;/p&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;nbsp;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="2814, 657, 2977, 770" coords2="2814, 657, 2977, 770" shape="rect" alt="VINCULACION DE CLIENTE:Use Case" id="areadiagram_map_JS9oIjmFYEDK8yaA_default" href="UseCase_JS9oIjmFYEDK8yaB.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;lt;b charset=&amp;quot;utf-8&amp;quot; id=&amp;quot;docs-internal-guid-94318332-7fff-7058-42eb-7d414df31462&amp;quot; style=&amp;quot;font-weight:normal;&amp;quot;&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;El 
+      sistema debe permitir corregir o actualizar la informaci&amp;#243;n t&amp;#233;cnica del 
+      veh&amp;#237;culo o realizar el traspaso de due&amp;#241;o en el sistema.&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/b&amp;gt;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="2409, 641, 2616, 727" coords2="2409, 641, 2616, 727" shape="rect" alt="ACTUALIZACION DE DATOS:Use Case" id="areadiagram_map_pDdoIjmFYEDK8yZv_default" href="UseCase_pDdoIjmFYEDK8yZw.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','2409, 641, 2616, 727',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_rb7fwjmFYEDK8w2k.html/MECANICO/Actor','Actor_lPkAIjmFYEDK8w5D.html/ADMINISTRADOR/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '2409, 641, 2616, 727'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;lt;b charset=&amp;quot;utf-8&amp;quot; id=&amp;quot;docs-internal-guid-b97878c9-7fff-636e-b4ac-3ab7048eca44&amp;quot; style=&amp;quot;font-weight:normal;&amp;quot;&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;El 
+      sistema debe permitir crear la ficha t&amp;#233;cnica de la moto: &amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:700;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;Placa 
+      (Obligatorio/&amp;#218;nico)&amp;lt;/span&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;, 
+      Marca, Modelo/A&amp;#241;o, Color, N&amp;#250;mero de Motor y Kilometraje actual.&amp;lt;/span&amp;gt;&amp;lt;/font&amp;gt;&amp;nbsp;&amp;lt;/b&amp;gt;
+    &amp;lt;/p&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;nbsp;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="2111, 641, 2334, 727" coords2="2111, 641, 2334, 727" shape="rect" alt="REGISTRO DE MOTO:Use Case" id="areadiagram_map_oIdoIjmFYEDK8yZe_default" href="UseCase_oIdoIjmFYEDK8yZf.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','2111, 641, 2334, 727',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_lPkAIjmFYEDK8w5D.html/ADMINISTRADOR/Actor','Actor_rb7fwjmFYEDK8w2k.html/MECANICO/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '2111, 641, 2334, 727'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;lt;b charset=&amp;quot;utf-8&amp;quot; id=&amp;quot;docs-internal-guid-80812b28-7fff-5ba7-61d1-7fa8190dfa66&amp;quot; style=&amp;quot;font-weight:normal;&amp;quot;&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;El 
+      sistema debe validar las credenciales de acceso y restringir la 
+      visibilidad de los m&amp;#243;dulos seg&amp;#250;n el nivel de permiso del rol.&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;nbsp;&amp;lt;/b&amp;gt;
+    &amp;lt;/p&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;nbsp;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="638, 1228, 864, 1331" coords2="638, 1228, 864, 1331" shape="rect" alt="AUTENTICACION:Use Case" id="areadiagram_map_oMOIIjmFYEDK8yUU_default" href="UseCase_mMOIIjmFYEDK8yUW.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','638, 1228, 864, 1331',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_lPkAIjmFYEDK8w5D.html/ADMINISTRADOR/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '638, 1228, 864, 1331'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;lt;b charset=&amp;quot;utf-8&amp;quot; id=&amp;quot;docs-internal-guid-f0e952ee-7fff-d678-0c21-3b18b426d5d0&amp;quot; style=&amp;quot;font-weight:normal;&amp;quot;&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;El 
+      sistema debe implementar un &amp;quot;borrado l&amp;#243;gico&amp;quot; (cambio de estado a 
+      Inactivo) para impedir el acceso a ex-empleados, manteniendo la 
+      integridad de los registros que estos crearon en el pasado.&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;nbsp;&amp;lt;/b&amp;gt;
+    &amp;lt;/p&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;nbsp;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="638, 1067, 863, 1161" coords2="638, 1067, 863, 1161" shape="rect" alt="BAJA DE USUARIOS:Use Case" id="areadiagram_map_oMOIIjmFYEDK8yUQ_default" href="UseCase_oMOIIjmFYEDK8yUS.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','638, 1067, 863, 1161',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_lPkAIjmFYEDK8w5D.html/ADMINISTRADOR/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '638, 1067, 863, 1161'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;lt;b charset=&amp;quot;utf-8&amp;quot; id=&amp;quot;docs-internal-guid-2ee07b25-7fff-3423-f4fb-caec160a914c&amp;quot; style=&amp;quot;font-weight:normal;&amp;quot;&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;El 
+      sistema debe permitir actualizar los datos de contacto y el 
+      restablecimiento de contrase&amp;#241;as de manera segura&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/b&amp;gt;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="905, 942, 1130, 1038" coords2="905, 942, 1130, 1038" shape="rect" alt="GESTION DE PERFIL:Use Case" id="areadiagram_map_30OIIjmFYEDK8yUM_default" href="UseCase_wMOIIjmFYEDK8yUO.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','905, 942, 1130, 1038',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_lPkAIjmFYEDK8w5D.html/ADMINISTRADOR/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '905, 942, 1130, 1038'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;lt;b charset=&amp;quot;utf-8&amp;quot; id=&amp;quot;docs-internal-guid-cde270a9-7fff-5a30-c47e-6287a797a368&amp;quot; style=&amp;quot;font-weight:normal;&amp;quot;&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;El 
+      sistema debe permitir listar y filtrar a los empleados por su rol o 
+      estado de disponibilidad.&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/b&amp;gt;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="2291, 917, 2509, 1011" coords2="2291, 917, 2509, 1011" shape="rect" alt="CONSULTA DE USUARIOS:Use Case" id="areadiagram_map_90OIIjmFYEDK8yUI_default" href="UseCase_H0OIIjmFYEDK8yUK.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','2291, 917, 2509, 1011',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_lPkAIjmFYEDK8w5D.html/ADMINISTRADOR/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '2291, 917, 2509, 1011'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;lt;b charset=&amp;quot;utf-8&amp;quot; id=&amp;quot;docs-internal-guid-8537dd16-7fff-c81a-3ee9-d1f16fb8566f&amp;quot; style=&amp;quot;font-weight:normal;&amp;quot;&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;El 
+      sistema debe permitir al Administrador crear perfiles de usuario 
+      capturando: Nombre, ID, Tel&amp;#233;fono, Correo electr&amp;#243;nico, Contrase&amp;#241;a y 
+      Asignaci&amp;#243;n de Rol (Administrador, Almacenista, Personal Operativo).&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/b&amp;gt;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="1203, 918, 1421, 1011" coords2="1203, 918, 1421, 1011" shape="rect" alt="REGISTRO DE PERSONAL:Use Case" id="areadiagram_map_y0OIIjmFYEDK8yTP_default" href="UseCase_t0OIIjmFYEDK8yUG.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','1203, 918, 1421, 1011',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_lPkAIjmFYEDK8w5D.html/ADMINISTRADOR/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '1203, 918, 1421, 1011'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" coords="1618, 1533, 1853, 1817" coords2="1618, 1533, 1853, 1817" shape="rect" alt="ADMINISTRADOR:Actor" id="areadiagram_map_lPkAIjmFYEDK8w5C_default" href="Actor_lPkAIjmFYEDK8w5D.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="3613, 52, 3740, 309" coords2="3613, 52, 3740, 309" shape="rect" alt="MECANICO:Actor" id="areadiagram_map_rb7fwjmFYEDK8w2j_default" href="Actor_rb7fwjmFYEDK8w2k.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" coords="113, 52, 291, 371" coords2="113, 52, 291, 371" shape="rect" alt="ALMACENISTA:Actor" id="areadiagram_map_Bz.fwjmFYEDK8w2R_default" href="Actor_Bz_fwjmFYEDK8w2S.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon()" onmousedown="clearSpotLight();"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;lt;b charset=&amp;quot;utf-8&amp;quot; id=&amp;quot;docs-internal-guid-41bfe1bf-7fff-fdc4-5b33-7a230759ce77&amp;quot; style=&amp;quot;font-weight:normal;&amp;quot;&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;El 
+      sistema debe verificar que la factura haya sido pagada correctamente 
+      antes de cerrar la orden de servicio y habilitar beneficios asociados 
+      como puntos de fidelizaci&amp;#243;n.&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/b&amp;gt;
+    &amp;lt;/p&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;nbsp;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="1464, 912, 1710, 1006" coords2="1464, 912, 1710, 1006" shape="rect" alt="VERIFICACION DE PAGO:Use Case" id="areadiagram_map_P2MfwjmFYEDK8w0y_default" href="UseCase_v2MfwjmFYEDK8w0z.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','1464, 912, 1710, 1006',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_lPkAIjmFYEDK8w5D.html/ADMINISTRADOR/Actor','Actor_yuiYIjmFYEDK8yhr.html/CLIENTE/Actor','Actor_Bz_fwjmFYEDK8w2S.html/ALMACENISTA/Actor','Actor_rb7fwjmFYEDK8w2k.html/MECANICO/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '1464, 912, 1710, 1006'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;lt;b charset=&amp;quot;utf-8&amp;quot; id=&amp;quot;docs-internal-guid-2f0dc89b-7fff-8d83-0323-1f2b9ae47d72&amp;quot; style=&amp;quot;font-weight:normal;&amp;quot;&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;El 
+      sistema debe permitir deshabilitar productos que ya no se comercializan 
+      o est&amp;#225;n obsoletos para evitar su selecci&amp;#243;n en nuevas &amp;#243;rdenes.&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;nbsp;&amp;lt;/b&amp;gt;
+    &amp;lt;/p&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;nbsp;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="638, 917, 835, 1022" coords2="638, 917, 835, 1022" shape="rect" alt="DESACTIVAR PRODUCTOS:Use Case" id="areadiagram_map_2mQfwjmFYEDK8wzw_default" href="UseCase_2mQfwjmFYEDK8wzx.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','638, 917, 835, 1022',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_lPkAIjmFYEDK8w5D.html/ADMINISTRADOR/Actor','Actor_Bz_fwjmFYEDK8w2S.html/ALMACENISTA/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '638, 917, 835, 1022'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;lt;b charset=&amp;quot;utf-8&amp;quot; id=&amp;quot;docs-internal-guid-9825a348-7fff-e20b-f65e-0f3051940f6f&amp;quot; style=&amp;quot;font-weight:normal;&amp;quot;&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;El 
+      sistema debe permitir la actualizaci&amp;#243;n masiva o individual de los 
+      precios de venta de los productos del cat&amp;#225;logo.&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/b&amp;gt;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="641, 411, 838, 497" coords2="641, 411, 838, 497" shape="rect" alt="MODIFICAR PRODUCTO:Use Case" id="areadiagram_map_HaHvwjmFYEDK8wyW_default" href="UseCase_HaHvwjmFYEDK8wyX.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','641, 411, 838, 497',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_Bz_fwjmFYEDK8w2S.html/ALMACENISTA/Actor','Actor_lPkAIjmFYEDK8w5D.html/ADMINISTRADOR/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '641, 411, 838, 497'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;lt;b charset=&amp;quot;utf-8&amp;quot; id=&amp;quot;docs-internal-guid-f1c6499a-7fff-463c-a7b2-79272a40a382&amp;quot; style=&amp;quot;font-weight:normal;&amp;quot;&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;El 
+      sistema debe ofrecer una b&amp;#250;squeda avanzada por nombre, c&amp;#243;digo o 
+      compatibilidad de marca para agilizar el trabajo del mec&amp;#225;nico y 
+      almacenista.&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/b&amp;gt;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="1594, 42, 1809, 137" coords2="1594, 42, 1809, 137" shape="rect" alt="BUSCADOR DE PRODUCTO:Use Case" id="areadiagram_map_A1dvwjmFYEDK8wxT_default" href="UseCase_g1dvwjmFYEDK8wxU.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','1594, 42, 1809, 137',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_rb7fwjmFYEDK8w2k.html/MECANICO/Actor','Actor_Bz_fwjmFYEDK8w2S.html/ALMACENISTA/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '1594, 42, 1809, 137'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;lt;b charset=&amp;quot;utf-8&amp;quot; id=&amp;quot;docs-internal-guid-b2896b39-7fff-83fe-9218-624b5736401a&amp;quot; style=&amp;quot;font-weight:normal;&amp;quot;&amp;gt;&amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;El 
+      sistema debe permitir registrar nuevos repuestos en el cat&amp;#225;logo 
+      incluyendo: C&amp;#243;digo/SKU, Nombre, Marca, Categor&amp;#237;a, Precio de Venta, 
+      Cantidades recibidas, Sugerido y Punto de Reorden (Stock m&amp;#237;nimo).&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;&amp;nbsp;&amp;lt;/b&amp;gt;
+    &amp;lt;/p&amp;gt;
+    &amp;lt;p style=&amp;quot;margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;nbsp;
+    &amp;lt;/p&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="636, 278, 833, 383" coords2="636, 278, 833, 383" shape="rect" alt="REGISTRO DE PRODUCTOS:Use Case" id="areadiagram_map_MZhvwjmFYEDK8wwb_default" href="UseCase_MZhvwjmFYEDK8wwc.html" onmouseover="storeReferenceAndSubdiagramInfos('diagram','636, 278, 833, 383',new Array(),new Array(),new Array(),new Array(),new Array(),new Array(),new Array('Actor_lPkAIjmFYEDK8w5D.html/ADMINISTRADOR/Actor','Actor_Bz_fwjmFYEDK8w2S.html/ALMACENISTA/Actor'),new Array(),new Array()),showReferenceIcon('diagram', '636, 278, 833, 383'),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+<area imageId="diagram" docContent="&amp;lt;head&amp;gt;
+    
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body style=&amp;quot;color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;&amp;quot;&amp;gt;
+    &amp;lt;h3 dir=&amp;quot;ltr&amp;quot; line-height=&amp;quot;1.38&amp;quot; style=&amp;quot;margin-bottom:4pt;margin-top:14pt;font-weight:bold;font-size:medium;&amp;quot;&amp;gt;
+      &amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:700;vertical-align:baseline;font-size:13pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;13pt&amp;quot; style=&amp;quot;color:#000000;font-size:13pt;&amp;quot;&amp;gt;&amp;lt;b&amp;gt;M&amp;#243;dulo 
+      de Usuarios (Gesti&amp;#243;n de Personal y Acceso)&amp;lt;/b&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;
+    &amp;lt;/h3&amp;gt;
+    &amp;lt;p dir=&amp;quot;ltr&amp;quot; line-height=&amp;quot;1.38&amp;quot; style=&amp;quot;margin-bottom:12pt;margin-right:0pt;margin-top:12pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;lt;span font-style=&amp;quot;italic&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;&amp;lt;i&amp;gt;Este 
+      m&amp;#243;dulo controla qui&amp;#233;n opera el sistema y qu&amp;#233; permisos tiene. &amp;lt;/i&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;
+    &amp;lt;/p&amp;gt;
+    &amp;lt;h3 dir=&amp;quot;ltr&amp;quot; line-height=&amp;quot;1.38&amp;quot; style=&amp;quot;margin-bottom:4pt;margin-top:14pt;font-weight:bold;font-size:medium;&amp;quot;&amp;gt;
+      &amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:700;vertical-align:baseline;font-size:13pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;13pt&amp;quot; style=&amp;quot;color:#000000;font-size:13pt;&amp;quot;&amp;gt;&amp;lt;b&amp;gt;M&amp;#243;dulo 
+      de Productos (Cat&amp;#225;logo e Inventario Maestro)&amp;lt;/b&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;
+    &amp;lt;/h3&amp;gt;
+    &amp;lt;p dir=&amp;quot;ltr&amp;quot; line-height=&amp;quot;1.38&amp;quot; style=&amp;quot;margin-bottom:12pt;margin-right:0pt;margin-top:12pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;lt;span font-style=&amp;quot;italic&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;&amp;lt;i&amp;gt;El 
+      cat&amp;#225;logo central de todo lo que el taller puede vender o usar.&amp;lt;/i&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;
+    &amp;lt;/p&amp;gt;
+    &amp;lt;h3 dir=&amp;quot;ltr&amp;quot; line-height=&amp;quot;1.38&amp;quot; style=&amp;quot;margin-bottom:4pt;margin-top:14pt;font-weight:bold;font-size:medium;&amp;quot;&amp;gt;
+      &amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:700;vertical-align:baseline;font-size:13pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;13pt&amp;quot; style=&amp;quot;color:#000000;font-size:13pt;&amp;quot;&amp;gt;&amp;lt;b&amp;gt;M&amp;#243;dulo 
+      de Automotores (Gesti&amp;#243;n de Veh&amp;#237;culos)&amp;lt;/b&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;
+    &amp;lt;/h3&amp;gt;
+    &amp;lt;p dir=&amp;quot;ltr&amp;quot; line-height=&amp;quot;1.38&amp;quot; style=&amp;quot;margin-bottom:12pt;margin-right:0pt;margin-top:12pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;lt;span font-style=&amp;quot;italic&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;&amp;lt;i&amp;gt;Base 
+      de datos de las motos vinculadas a sus propietarios.&amp;lt;/i&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;
+    &amp;lt;/p&amp;gt;
+    &amp;lt;h3 dir=&amp;quot;ltr&amp;quot; line-height=&amp;quot;1.38&amp;quot; style=&amp;quot;margin-bottom:4pt;margin-top:14pt;font-weight:bold;font-size:medium;&amp;quot;&amp;gt;
+      &amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:700;vertical-align:baseline;font-size:13pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;13pt&amp;quot; style=&amp;quot;color:#000000;font-size:13pt;&amp;quot;&amp;gt;&amp;lt;b&amp;gt;M&amp;#243;dulo 
+      de Servicios y Orden de Trabajo&amp;lt;/b&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;
+    &amp;lt;/h3&amp;gt;
+    &amp;lt;p dir=&amp;quot;ltr&amp;quot; line-height=&amp;quot;1.38&amp;quot; style=&amp;quot;margin-bottom:12pt;margin-right:0pt;margin-top:12pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;lt;span font-style=&amp;quot;italic&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;&amp;lt;i&amp;gt;Donde 
+      el mec&amp;#225;nico realiza el diagn&amp;#243;stico y solicita los materiales.&amp;lt;/i&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;
+    &amp;lt;/p&amp;gt;
+    &amp;lt;h3 dir=&amp;quot;ltr&amp;quot; line-height=&amp;quot;1.38&amp;quot; style=&amp;quot;margin-bottom:4pt;margin-top:14pt;font-weight:bold;font-size:medium;&amp;quot;&amp;gt;
+      &amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:700;vertical-align:baseline;font-size:13pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;13pt&amp;quot; style=&amp;quot;color:#000000;font-size:13pt;&amp;quot;&amp;gt;&amp;lt;b&amp;gt;&amp;nbsp;M&amp;#243;dulo 
+      de Ingresos (Compras y Abastecimiento)&amp;lt;/b&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;
+    &amp;lt;/h3&amp;gt;
+    &amp;lt;p dir=&amp;quot;ltr&amp;quot; line-height=&amp;quot;1.38&amp;quot; style=&amp;quot;margin-bottom:12pt;margin-right:0pt;margin-top:12pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;lt;span font-style=&amp;quot;italic&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;&amp;lt;i&amp;gt;Proceso 
+      de entrada de mercanc&amp;#237;a para alimentar el stock.&amp;lt;/i&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;
+    &amp;lt;/p&amp;gt;
+    &amp;lt;h3 dir=&amp;quot;ltr&amp;quot; line-height=&amp;quot;1.38&amp;quot; style=&amp;quot;margin-bottom:4pt;margin-top:14pt;font-weight:bold;font-size:medium;&amp;quot;&amp;gt;
+      &amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:700;vertical-align:baseline;font-size:13pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;13pt&amp;quot; style=&amp;quot;color:#000000;font-size:13pt;&amp;quot;&amp;gt;&amp;lt;b&amp;gt;M&amp;#243;dulo 
+      de Autorizaciones (Portal del Cliente)&amp;lt;/b&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;
+    &amp;lt;/h3&amp;gt;
+    &amp;lt;p dir=&amp;quot;ltr&amp;quot; line-height=&amp;quot;1.38&amp;quot; style=&amp;quot;margin-bottom:12pt;margin-right:0pt;margin-top:12pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;lt;span font-style=&amp;quot;italic&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;&amp;lt;i&amp;gt;El 
+      puente de comunicaci&amp;#243;n y aprobaci&amp;#243;n para el presupuesto.&amp;lt;/i&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;
+    &amp;lt;/p&amp;gt;
+    &amp;lt;h3 dir=&amp;quot;ltr&amp;quot; line-height=&amp;quot;1.38&amp;quot; style=&amp;quot;margin-bottom:4pt;margin-top:14pt;font-weight:bold;font-size:medium;&amp;quot;&amp;gt;
+      &amp;lt;span font-style=&amp;quot;normal&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:700;vertical-align:baseline;font-size:13pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;13pt&amp;quot; style=&amp;quot;color:#000000;font-size:13pt;&amp;quot;&amp;gt;&amp;lt;b&amp;gt;M&amp;#243;dulo 
+      de Recibos y Facturaci&amp;#243;n&amp;lt;/b&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;
+    &amp;lt;/h3&amp;gt;
+    &amp;lt;p dir=&amp;quot;ltr&amp;quot; line-height=&amp;quot;1.38&amp;quot; style=&amp;quot;margin-bottom:12pt;margin-right:0pt;margin-top:12pt;margin-left:0pt;&amp;quot;&amp;gt;
+      &amp;lt;span font-style=&amp;quot;italic&amp;quot; font-variant=&amp;quot;normal&amp;quot; style=&amp;quot;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;&amp;quot; text-decoration=&amp;quot;none&amp;quot; white-space=&amp;quot;pre-wrap&amp;quot;&amp;gt;&amp;lt;font face=&amp;quot;Arial,sans-serif&amp;quot; size=&amp;quot;11pt&amp;quot; style=&amp;quot;color:#000000;font-size:11pt;&amp;quot;&amp;gt;&amp;lt;i&amp;gt;Cierre 
+      de la orden, liquidaci&amp;#243;n y descarga final de inventario.&amp;lt;/i&amp;gt;&amp;lt;/font&amp;gt;&amp;lt;/span&amp;gt;
+    &amp;lt;/p&amp;gt;
+    &amp;lt;br class=&amp;quot;Apple-interchange-newline&amp;quot;&amp;gt;
+    &amp;lt;br class=&amp;quot;Apple-interchange-newline&amp;quot;&amp;gt;
+    &amp;lt;br class=&amp;quot;Apple-interchange-newline&amp;quot;&amp;gt;
+  &amp;lt;/body&amp;gt;" coords="506, 2, 3440, 1455" coords2="506, 2, 3440, 1455" shape="rect" alt="SISTEMA:System" id="areadiagram_map_9NqvwjmFYEDK8wwL_default" href="System_9NqvwjmFYEDK8wwM.html" onmouseover="hideReferenceIcon(),hideSubdiagramIcon(),hideTransitorIcon(),showTooltip(this)" onmousedown="clearSpotLight();" onmouseout="hideTooltip()"/>
+</map>
+				</td>
+			</tr>
+		</table>
+		<p>
+		</p>
+	</div>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="Category">
+				Model Elements			</td>
+		</tr>
+		<tr>
+			<td style="height: 5px">
+			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td colSpan="4" class="TableHeaderLine">
+			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine1">
+			</td>
+		</tr>
+		<tr class="TableHeader">
+			<td class="TableCellSpaceHolder10Px">
+			</td>
+			<td width="30%">
+<span class="TableHeaderText">Name</span>			</td>
+			<td class="TableCellSpaceHolder20Px">
+			</td>
+			<td>
+<span class="TableHeaderText">Description</span>			</td>
+		</tr>
+		<tr>
+			<td colSpan="4" class="TableHeaderLine2">
+			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/System.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/System.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="System_9NqvwjmFYEDK8wwM.html" class="ItemLink">SISTEMA : System</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <h3 dir="ltr" line-height="1.38" style="margin-bottom:4pt;margin-top:14pt;font-weight:bold;font-size:medium;">
+      <span font-style="normal" font-variant="normal" style="color:#000000;font-weight:700;vertical-align:baseline;font-size:13pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="13pt" style="color:#000000;font-size:13pt;"><b>M&#243;dulo 
+      de Usuarios (Gesti&#243;n de Personal y Acceso)</b></font></span>
+    </h3>
+    <p dir="ltr" line-height="1.38" style="margin-bottom:12pt;margin-right:0pt;margin-top:12pt;margin-left:0pt;">
+      <span font-style="italic" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;"><i>Este 
+      m&#243;dulo controla qui&#233;n opera el sistema y qu&#233; permisos tiene. </i></font></span>
+    </p>
+    <h3 dir="ltr" line-height="1.38" style="margin-bottom:4pt;margin-top:14pt;font-weight:bold;font-size:medium;">
+      <span font-style="normal" font-variant="normal" style="color:#000000;font-weight:700;vertical-align:baseline;font-size:13pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="13pt" style="color:#000000;font-size:13pt;"><b>M&#243;dulo 
+      de Productos (Cat&#225;logo e Inventario Maestro)</b></font></span>
+    </h3>
+    <p dir="ltr" line-height="1.38" style="margin-bottom:12pt;margin-right:0pt;margin-top:12pt;margin-left:0pt;">
+      <span font-style="italic" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;"><i>El 
+      cat&#225;logo central de todo lo que el taller puede vender o usar.</i></font></span>
+    </p>
+    <h3 dir="ltr" line-height="1.38" style="margin-bottom:4pt;margin-top:14pt;font-weight:bold;font-size:medium;">
+      <span font-style="normal" font-variant="normal" style="color:#000000;font-weight:700;vertical-align:baseline;font-size:13pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="13pt" style="color:#000000;font-size:13pt;"><b>M&#243;dulo 
+      de Automotores (Gesti&#243;n de Veh&#237;culos)</b></font></span>
+    </h3>
+    <p dir="ltr" line-height="1.38" style="margin-bottom:12pt;margin-right:0pt;margin-top:12pt;margin-left:0pt;">
+      <span font-style="italic" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;"><i>Base 
+      de datos de las motos vinculadas a sus propietarios.</i></font></span>
+    </p>
+    <h3 dir="ltr" line-height="1.38" style="margin-bottom:4pt;margin-top:14pt;font-weight:bold;font-size:medium;">
+      <span font-style="normal" font-variant="normal" style="color:#000000;font-weight:700;vertical-align:baseline;font-size:13pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="13pt" style="color:#000000;font-size:13pt;"><b>M&#243;dulo 
+      de Servicios y Orden de Trabajo</b></font></span>
+    </h3>
+    <p dir="ltr" line-height="1.38" style="margin-bottom:12pt;margin-right:0pt;margin-top:12pt;margin-left:0pt;">
+      <span font-style="italic" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;"><i>Donde 
+      el mec&#225;nico realiza el diagn&#243;stico y solicita los materiales.</i></font></span>
+    </p>
+    <h3 dir="ltr" line-height="1.38" style="margin-bottom:4pt;margin-top:14pt;font-weight:bold;font-size:medium;">
+      <span font-style="normal" font-variant="normal" style="color:#000000;font-weight:700;vertical-align:baseline;font-size:13pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="13pt" style="color:#000000;font-size:13pt;"><b>&nbsp;M&#243;dulo 
+      de Ingresos (Compras y Abastecimiento)</b></font></span>
+    </h3>
+    <p dir="ltr" line-height="1.38" style="margin-bottom:12pt;margin-right:0pt;margin-top:12pt;margin-left:0pt;">
+      <span font-style="italic" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;"><i>Proceso 
+      de entrada de mercanc&#237;a para alimentar el stock.</i></font></span>
+    </p>
+    <h3 dir="ltr" line-height="1.38" style="margin-bottom:4pt;margin-top:14pt;font-weight:bold;font-size:medium;">
+      <span font-style="normal" font-variant="normal" style="color:#000000;font-weight:700;vertical-align:baseline;font-size:13pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="13pt" style="color:#000000;font-size:13pt;"><b>M&#243;dulo 
+      de Autorizaciones (Portal del Cliente)</b></font></span>
+    </h3>
+    <p dir="ltr" line-height="1.38" style="margin-bottom:12pt;margin-right:0pt;margin-top:12pt;margin-left:0pt;">
+      <span font-style="italic" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;"><i>El 
+      puente de comunicaci&#243;n y aprobaci&#243;n para el presupuesto.</i></font></span>
+    </p>
+    <h3 dir="ltr" line-height="1.38" style="margin-bottom:4pt;margin-top:14pt;font-weight:bold;font-size:medium;">
+      <span font-style="normal" font-variant="normal" style="color:#000000;font-weight:700;vertical-align:baseline;font-size:13pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="13pt" style="color:#000000;font-size:13pt;"><b>M&#243;dulo 
+      de Recibos y Facturaci&#243;n</b></font></span>
+    </h3>
+    <p dir="ltr" line-height="1.38" style="margin-bottom:12pt;margin-right:0pt;margin-top:12pt;margin-left:0pt;">
+      <span font-style="italic" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;"><i>Cierre 
+      de la orden, liquidaci&#243;n y descarga final de inventario.</i></font></span>
+    </p>
+    <br class="Apple-interchange-newline">
+    <br class="Apple-interchange-newline">
+    <br class="Apple-interchange-newline">
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Actor.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Actor.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="Actor_Bz_fwjmFYEDK8w2S.html" class="ItemLink">ALMACENISTA : Actor</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Actor.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Actor.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="Actor_rb7fwjmFYEDK8w2k.html" class="ItemLink">MECANICO : Actor</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Actor.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Actor.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="Actor_lPkAIjmFYEDK8w5D.html" class="ItemLink">ADMINISTRADOR : Actor</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/Actor.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/Actor.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="Actor_yuiYIjmFYEDK8yhr.html" class="ItemLink">CLIENTE : Actor</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_MZhvwjmFYEDK8wwc.html" class="ItemLink">REGISTRO DE PRODUCTOS : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      <b charset="utf-8" id="docs-internal-guid-b2896b39-7fff-83fe-9218-624b5736401a" style="font-weight:normal;"><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;">El 
+      sistema debe permitir registrar nuevos repuestos en el cat&#225;logo 
+      incluyendo: C&#243;digo/SKU, Nombre, Marca, Categor&#237;a, Precio de Venta, 
+      Cantidades recibidas, Sugerido y Punto de Reorden (Stock m&#237;nimo).</font></span>&nbsp;</b>
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      &nbsp;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_g1dvwjmFYEDK8wxU.html" class="ItemLink">BUSCADOR DE PRODUCTO : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      <b charset="utf-8" id="docs-internal-guid-f1c6499a-7fff-463c-a7b2-79272a40a382" style="font-weight:normal;"><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;">El 
+      sistema debe ofrecer una b&#250;squeda avanzada por nombre, c&#243;digo o 
+      compatibilidad de marca para agilizar el trabajo del mec&#225;nico y 
+      almacenista.</font></span></b>
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_HaHvwjmFYEDK8wyX.html" class="ItemLink">MODIFICAR PRODUCTO : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      <b charset="utf-8" id="docs-internal-guid-9825a348-7fff-e20b-f65e-0f3051940f6f" style="font-weight:normal;"><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;">El 
+      sistema debe permitir la actualizaci&#243;n masiva o individual de los 
+      precios de venta de los productos del cat&#225;logo.</font></span></b>
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_2mQfwjmFYEDK8wzx.html" class="ItemLink">DESACTIVAR PRODUCTOS : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      <b charset="utf-8" id="docs-internal-guid-2f0dc89b-7fff-8d83-0323-1f2b9ae47d72" style="font-weight:normal;"><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;">El 
+      sistema debe permitir deshabilitar productos que ya no se comercializan 
+      o est&#225;n obsoletos para evitar su selecci&#243;n en nuevas &#243;rdenes.</font></span>&nbsp;</b>
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      &nbsp;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_v2MfwjmFYEDK8w0z.html" class="ItemLink">VERIFICACION DE PAGO : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      <b charset="utf-8" id="docs-internal-guid-41bfe1bf-7fff-fdc4-5b33-7a230759ce77" style="font-weight:normal;"><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;">El 
+      sistema debe verificar que la factura haya sido pagada correctamente 
+      antes de cerrar la orden de servicio y habilitar beneficios asociados 
+      como puntos de fidelizaci&#243;n.</font></span></b>
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      &nbsp;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_t0OIIjmFYEDK8yUG.html" class="ItemLink">REGISTRO DE PERSONAL : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      <b charset="utf-8" id="docs-internal-guid-8537dd16-7fff-c81a-3ee9-d1f16fb8566f" style="font-weight:normal;"><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;">El 
+      sistema debe permitir al Administrador crear perfiles de usuario 
+      capturando: Nombre, ID, Tel&#233;fono, Correo electr&#243;nico, Contrase&#241;a y 
+      Asignaci&#243;n de Rol (Administrador, Almacenista, Personal Operativo).</font></span></b>
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_H0OIIjmFYEDK8yUK.html" class="ItemLink">CONSULTA DE USUARIOS : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      <b charset="utf-8" id="docs-internal-guid-cde270a9-7fff-5a30-c47e-6287a797a368" style="font-weight:normal;"><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;">El 
+      sistema debe permitir listar y filtrar a los empleados por su rol o 
+      estado de disponibilidad.</font></span></b>
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_wMOIIjmFYEDK8yUO.html" class="ItemLink">GESTION DE PERFIL : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      <b charset="utf-8" id="docs-internal-guid-2ee07b25-7fff-3423-f4fb-caec160a914c" style="font-weight:normal;"><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;">El 
+      sistema debe permitir actualizar los datos de contacto y el 
+      restablecimiento de contrase&#241;as de manera segura</font></span></b>
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_oMOIIjmFYEDK8yUS.html" class="ItemLink">BAJA DE USUARIOS : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      <b charset="utf-8" id="docs-internal-guid-f0e952ee-7fff-d678-0c21-3b18b426d5d0" style="font-weight:normal;"><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;">El 
+      sistema debe implementar un &quot;borrado l&#243;gico&quot; (cambio de estado a 
+      Inactivo) para impedir el acceso a ex-empleados, manteniendo la 
+      integridad de los registros que estos crearon en el pasado.</font></span>&nbsp;</b>
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      &nbsp;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_mMOIIjmFYEDK8yUW.html" class="ItemLink">AUTENTICACION : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      <b charset="utf-8" id="docs-internal-guid-80812b28-7fff-5ba7-61d1-7fa8190dfa66" style="font-weight:normal;"><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;">El 
+      sistema debe validar las credenciales de acceso y restringir la 
+      visibilidad de los m&#243;dulos seg&#250;n el nivel de permiso del rol.</font></span>&nbsp;</b>
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      &nbsp;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_oIdoIjmFYEDK8yZf.html" class="ItemLink">REGISTRO DE MOTO : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      <b charset="utf-8" id="docs-internal-guid-b97878c9-7fff-636e-b4ac-3ab7048eca44" style="font-weight:normal;"><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;">El 
+      sistema debe permitir crear la ficha t&#233;cnica de la moto: </font></span><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;"><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:700;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap">Placa 
+      (Obligatorio/&#218;nico)</span><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap">, 
+      Marca, Modelo/A&#241;o, Color, N&#250;mero de Motor y Kilometraje actual.</span></font>&nbsp;</b>
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      &nbsp;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_pDdoIjmFYEDK8yZw.html" class="ItemLink">ACTUALIZACION DE DATOS : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      <b charset="utf-8" id="docs-internal-guid-94318332-7fff-7058-42eb-7d414df31462" style="font-weight:normal;"><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;">El 
+      sistema debe permitir corregir o actualizar la informaci&#243;n t&#233;cnica del 
+      veh&#237;culo o realizar el traspaso de due&#241;o en el sistema.</font></span></b>
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_JS9oIjmFYEDK8yaB.html" class="ItemLink">VINCULACION DE CLIENTE : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      <b charset="utf-8" id="docs-internal-guid-83fed41d-7fff-c310-6e66-0256c0475b78" style="font-weight:normal;"><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;">El 
+      sistema debe permitir asociar cada moto a los datos de un cliente 
+      (Nombre, C&#233;dula, Tel&#233;fono) para trazabilidad.</font></span>&nbsp;</b>
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      &nbsp;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_sj9oIjmFYEDK8yaS.html" class="ItemLink">HOJA DE VIDA : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      <b charset="utf-8" id="docs-internal-guid-d25a2b4f-7fff-1e4c-5d93-0607f1c46c6f" style="font-weight:normal;"><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;">El 
+      sistema debe permitir visualizar el historial completo de todos los 
+      servicios, repuestos instalados y diagn&#243;sticos previos realizados a una 
+      moto mediante la b&#250;squeda por placa.</font></span>&nbsp;</b>
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      &nbsp;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_bVMkIjmFYEDK8ynE.html" class="ItemLink">SEGUIMIENTO DE ESTADOS : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      <b charset="utf-8" id="docs-internal-guid-581423d3-7fff-9817-986f-e88d7484d766" style="font-weight:normal;"><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;">El 
+      sistema debe actualizar el estado de la orden (Recibida -&gt; En 
+      Diagn&#243;stico -&gt; Pendiente Autorizaci&#243;n -&gt; En Reparaci&#243;n -&gt; Lista para 
+      Entrega).</font></span></b>
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_hwskIjmFYEDK8ynT.html" class="ItemLink">REGISTRO DE DIAGNOSTICO : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      <b charset="utf-8" id="docs-internal-guid-02a0186e-7fff-c614-a5a7-b4011e1061ba" style="font-weight:normal;"><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;">El 
+      sistema debe permitir al Mec&#225;nico redactar un diagn&#243;stico t&#233;cnico 
+      detallado y adjuntar el estado de la moto.</font></span></b>
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_XWskIjmFYEDK8ynk.html" class="ItemLink">ASIGNACION DE MANO DE OBRA : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      <b charset="utf-8" id="docs-internal-guid-0e97764f-7fff-547b-1854-68a1513aad33" style="font-weight:normal;"><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;">El 
+      sistema debe permitir agregar los servicios realizados (mano de obra) 
+      con sus respectivos tiempos y costos</font></span></b>
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_ZhckIjmFYEDK8yn1.html" class="ItemLink">SOLICITUD DE REPUESTOS : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      <b charset="utf-8" id="docs-internal-guid-75f7c901-7fff-1be9-2cb0-7c27f876e6c6" style="font-weight:normal;"><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;">El 
+      sistema debe permitir al Mec&#225;nico agregar a la orden los repuestos 
+      necesarios tomados del </font></span><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;"><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:700;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap">M&#243;dulo 
+      de Productos</span><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap">, 
+      los cuales quedar&#225;n en estado &quot;Pendiente de Autorizaci&#243;n</span></font></b>
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_PbckIjmFYEDK8yoG.html" class="ItemLink">APERTURA DE ORDEN : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      <b charset="utf-8" id="docs-internal-guid-b977fe70-7fff-5174-d7b8-9db124cd6e01" style="font-weight:normal;"><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;">El 
+      sistema debe permitir generar una Orden de Servicio vinculada a una 
+      Placa, registrando el estado en que se recibe la moto y el motivo de 
+      ingreso.</font></span>&nbsp;</b>
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      &nbsp;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_x1eUIjmFYEDK8ywe.html" class="ItemLink">CREAR INGRESOS : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p data-path-to-node="5" style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      <b charset="utf-8" id="docs-internal-guid-6107ef92-7fff-eeab-7f3a-e549867963b8" style="font-weight:normal;"><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:700;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;">Asegurar 
+      el registro y control adecuado de los nuevos repuestos que ingresan al 
+      almac&#233;n, garantizando trazabilidad, actualizaci&#243;n del inventario y 
+      respaldo documental.</font></span></b>
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_qi_UIjmFYEDK8ywv.html" class="ItemLink">CONSULTAR COMPRAS : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      &nbsp;<b charset="utf-8" id="docs-internal-guid-7f85b97c-7fff-0017-ea41-9b9d0c4ad3f4" style="font-weight:normal;"><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;">El 
+      sistema debe permitir consultar cu&#225;ndo y a qu&#233; precio se compraron 
+      determinados repuestos para analizar variaciones de costo.</font></span>&nbsp;</b>
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      &nbsp;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_2MBUIjmFYEDK8yxA.html" class="ItemLink">MODIFICACIÓN DE INGRESO : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      <b charset="utf-8" id="docs-internal-guid-3c409040-7fff-30f8-db5b-f52d40853fb1" style="font-weight:normal;"><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;">El 
+      sistema debe permitir editar un ingreso solo si se detectan errores en 
+      la cantidad reportada antes de que el producto sea utilizado.</font></span></b>
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_ArOaIjmFYEDK8y3V.html" class="ItemLink">CONSULTA POR PLACA : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      <b charset="utf-8" id="docs-internal-guid-762d946d-7fff-83d7-0906-f689635ab1ff" style="font-weight:normal;"><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;">El 
+      sistema debe habilitar una interfaz web p&#250;blica donde el Cliente, 
+      ingresando &#250;nicamente su </font></span><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;"><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:700;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap">Placa</span><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap">, 
+      pueda ver el estado de su moto.</span></font>&nbsp;</b>
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      &nbsp;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_IOuaIjmFYEDK8y3k.html" class="ItemLink">VISUALIZACION DE PRESUPUESTO : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      <b charset="utf-8" id="docs-internal-guid-7b4b1054-7fff-0df1-9655-89720dba7c8b" style="font-weight:normal;"><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;">El 
+      cliente debe poder leer el detalle de los repuestos y servicios 
+      sugeridos por el mec&#225;nico con sus precios unitarios y totales.</font></span>&nbsp;</b>
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      &nbsp;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_MUeaIjmFYEDK8y31.html" class="ItemLink">APROBACIÓN : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      <b charset="utf-8" id="docs-internal-guid-49a040c6-7fff-7c51-2c34-d8e71707abfe" style="font-weight:normal;"><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;">El 
+      sistema debe permitir al cliente </font></span><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;"><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:700;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap">autorizar 
+      o rechazar</span><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"> 
+      cada &#237;tem del presupuesto de forma individual o global.</span></font>&nbsp;</b>
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      &nbsp;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_2DeaIjmFYEDK8y4G.html" class="ItemLink">NOTIFICACIÓN : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      Permite enviar alertas autom&#225;ticas a clientes y administradores seg&#250;n 
+      eventos relevantes en la plataforma.
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      &nbsp;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_Ky_6IjmFYEDK8y_f.html" class="ItemLink">GENERACIÓN DE RECIBO : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      <b charset="utf-8" id="docs-internal-guid-2e8baa86-7fff-60f0-0fa6-038bead546ca" style="font-weight:normal;"><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;">El 
+      sistema debe generar autom&#225;ticamente un documento de cobro que incluya 
+      &#250;nicamente los servicios y repuestos </font></span><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;"><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:700;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap">autorizados</span><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"> 
+      por el cliente en el m&#243;dulo anterior.</span></font>&nbsp;</b>
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      &nbsp;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_EkAGIjmFYEDK8y__.html" class="ItemLink">REPORTE DE VENTAS : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      &nbsp;<b charset="utf-8" id="docs-internal-guid-7046900c-7fff-0489-0b7a-88942629e191" style="font-weight:normal;"><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;">El 
+      sistema debe permitir al Administrador consultar y reimprimir recibos 
+      hist&#243;ricos para auditor&#237;a y contabilidad.</font></span>&nbsp;</b>
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      &nbsp;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_rFAGIjmFYEDK8zAQ.html" class="ItemLink">ANULACIÓN DE FACTURA : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      <b charset="utf-8" id="docs-internal-guid-193d9687-7fff-6d6b-ab00-f9be2b15c13b" style="font-weight:normal;"><span font-style="normal" font-variant="normal" style="color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;">El 
+      sistema debe permitir anular un recibo por error administrativo, lo cual 
+      debe reintegrar los repuestos al stock y reabrir la orden de servicio.</font></span>&nbsp;</b>
+    </p>
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      &nbsp;
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_5c3ZtjmFYEDMBhru.html" class="ItemLink">REGISTRO DE CLIENTE : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      Permite registrar nuevos clientes en la plataforma, almacenando 
+      informaci&#243;n detallada que facilitar&#225; futuras ventas y comunicaci&#243;n.
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow2">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_f6KsmzmFYEDKDBFd.html" class="ItemLink">PROGRAMA DE FIDELIZACION : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      <b charset="utf-8" id="docs-internal-guid-524ddd90-7fff-a52a-8a09-699dd7c47e0e" style="font-weight:normal;"><span font-style="normal" font-variant="normal" style="background-color:#ffffff;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;">El 
+      sistema debe permitir acumular puntos o beneficios de fidelizaci&#243;n para 
+      los clientes por cada orden de servicio pagada, los cuales podr&#225;n 
+      consultarse en el portal y utilizarse en futuros servicios.</font></span></b>
+    </p>
+  </body></span>			</td>
+		</tr>
+		<tr class="TableRow1">
+			<td>
+			</td>
+			<td>
+				<span class="TableContent">
+					<div style="float: left; width: 18px !important;height: 18px !important;background-image:url(../images/icons/UseCase.png) !important; background-image:url(''); filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/icons/UseCase.png'); background-repeat: no-repeat; background-size: contain;">
+					</div>
+					&nbsp; <a href="UseCase_ZTmsmzmFYEDKDBGZ.html" class="ItemLink">CALIFICACION DEL SERVICIO : Use Case</a>				</span>
+			</td>
+			<td>
+			</td>
+			<td style="padding: 5px 0">
+<span class="TableContent Documentation"><head>
+    
+  </head>
+  <body style="color:#000000;margin-right:0;font-weight:normal;font-size:12px;font-family:Dialog;margin-left:0;">
+    <p style="margin-bottom:.0001pt;margin-right:0pt;margin-top:0pt;margin-left:0pt;">
+      <b charset="utf-8" id="docs-internal-guid-c249aac4-7fff-a7fa-9d0b-9c8f7eb2e563" style="font-weight:normal;"><span font-style="normal" font-variant="normal" style="background-color:#ffffff;color:#000000;font-weight:400;vertical-align:baseline;font-size:11pt;font-family:Arial,sans-serif;" text-decoration="none" white-space="pre-wrap"><font face="Arial,sans-serif" size="11pt" style="color:#000000;font-size:11pt;">El 
+      sistema debe permitir que el cliente califique el servicio recibido 
+      mediante una puntuaci&#243;n y un comentario opcional una vez finalizada la 
+      orden de servicio. La calificaci&#243;n debe quedar registrada para consulta 
+      del administrador.</font></span></b>
+    </p>
+  </body></span>			</td>
+		</tr>
+	</table>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="TableCellSpaceHolder1PxTall">
+			</td>
+		</tr>
+		<tr>
+			<td class="TableFooter">
+			</td>
+		</tr>
+	</table>
+	<div style="height: 20px">
+	</div>
+	<table border="0" cellpadding="0" width="100%" cellspacing="0">
+		<tr>
+			<td class="FooterLine">
+			</td>
+		</tr>
+	</table>
+	<div class="HeaderText">
+		Modulo de Productos	</div>
+</body>
+</html>
